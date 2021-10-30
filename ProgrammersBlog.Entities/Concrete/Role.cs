@@ -1,4 +1,4 @@
-﻿using ProgrammersBlog.Core.Entities.Abstract;
+﻿using ProgrammersBlog.Core.Entity.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
