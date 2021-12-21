@@ -19,9 +19,10 @@ namespace ProgrammersBlog.Core.Data.Concrete.EntityFramework
             _context = context;
             _dbSet = _context.Set<TEntity>();
         }
-        public async Task AddAsync(TEntity entity)
+        public async Task<TEntity> AddAsync(TEntity entity)
         {
             await _dbSet.AddAsync(entity);
+            return entity;
         }
 
         public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate)
@@ -79,9 +80,10 @@ namespace ProgrammersBlog.Core.Data.Concrete.EntityFramework
             return await query.SingleOrDefaultAsync();
         }
 
-        public async Task UpdateAsync(TEntity entity)
+        public async Task<TEntity> UpdateAsync(TEntity entity)
         {
             await Task.Run(() => { _dbSet.Update(entity); });
+            return entity;
         }
     }
 }

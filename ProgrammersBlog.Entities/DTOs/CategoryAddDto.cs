@@ -26,7 +26,7 @@ namespace ProgrammersBlog.Entity.DTOs
         [MinLength(3, ErrorMessage = "{0} must be greater than {1} characters.")]
         public string Note { get; set; }
 
-        [DisplayName("Is Category Active?")]
+        [DisplayName("Active")]
         [Required(ErrorMessage = "{0} is required.")]
         public bool IsActive { get; set; }
     }

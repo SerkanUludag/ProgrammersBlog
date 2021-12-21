@@ -59,7 +59,7 @@ namespace ProgrammersBlog.Entity.DTOs
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
-        [DisplayName("Is Article Active?")]
+        [DisplayName("Active")]
         [Required(ErrorMessage = "{0} is required.")]
         public bool IsActive { get; set; }
 

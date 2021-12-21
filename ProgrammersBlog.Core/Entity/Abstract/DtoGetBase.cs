@@ -10,5 +10,6 @@ namespace ProgrammersBlog.Core.Entity.Abstract
     public abstract class DtoGetBase
     {
         public virtual ResultStatus Status { get; set; }
+        public virtual string Message { get; set; }
     }  
 }

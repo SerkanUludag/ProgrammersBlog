@@ -12,12 +12,13 @@ namespace ProgrammersBlog.Service.Abstract
     public interface ICategoryService   
     {
         Task<IDataResult<CategoryDto>> Get(int categoryId);
+        Task<IDataResult<CategoryUpdateDto>> GetCategoryUpdateDto(int categoryId);
         Task<IDataResult<CategoryListDto>> GetAll();        // IList allowed because out T
         Task<IDataResult<CategoryListDto>> GetAllNonDeleted();
         Task<IDataResult<CategoryListDto>> GetAllNonDeletedAndActive();
-        Task<IResult> Add(CategoryAddDto categoryAddDto, string createdByName);
-        Task<IResult> Update(CategoryUpdateDto categoryUpdateDto, string modifiedByName);
-        Task<IResult> Delete(int categoryId, string modifiedByName);
+        Task<IDataResult<CategoryDto>> Add(CategoryAddDto categoryAddDto, string createdByName);
+        Task<IDataResult<CategoryDto>> Update(CategoryUpdateDto categoryUpdateDto, string modifiedByName);
+        Task<IDataResult<CategoryDto>> Delete(int categoryId, string modifiedByName);
         Task<IResult> HardDelete(int categoryId);
 
     }
