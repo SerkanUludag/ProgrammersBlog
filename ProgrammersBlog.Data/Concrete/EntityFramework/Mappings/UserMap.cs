@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ProgrammersBlog.Entity.Concrete;
 using System;
@@ -13,57 +14,92 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).ValueGeneratedOnAdd();
-            builder.Property(x => x.Email).IsRequired();
-            builder.Property(x => x.Email).HasMaxLength(50);
-            builder.HasIndex(x => x.Email).IsUnique();      // unique
-            builder.Property(x => x.UserName).IsRequired();
-            builder.Property(x => x.UserName).HasMaxLength(20);
-            builder.HasIndex(x => x.UserName).IsUnique();
-            builder.Property(x => x.PasswordHash).HasColumnType("VARBINARY(500)");
-            builder.Property(x => x.Description).HasMaxLength(500);
-            builder.Property(x => x.FirstName).IsRequired();
-            builder.Property(x => x.FirstName).HasMaxLength(30);
-            builder.Property(x => x.LastName).IsRequired();
-            builder.Property(x => x.LastName).HasMaxLength(30);
+
             builder.Property(x => x.Picture).IsRequired();
             builder.Property(x => x.Picture).HasMaxLength(250);
-            builder.Property(x => x.CreatedByName).IsRequired();
-            builder.Property(x => x.CreatedByName).HasMaxLength(50);
-            builder.Property(x => x.ModifiedByName).IsRequired();
-            builder.Property(x => x.ModifiedByName).HasMaxLength(50);
-            builder.Property(x => x.CreatedDate).IsRequired();
-            builder.Property(x => x.ModifiedDate).IsRequired();
-            builder.Property(x => x.IsActive).IsRequired();
-            builder.Property(x => x.IsDeleted).IsRequired();
-            builder.Property(x => x.Note).HasMaxLength(500);
 
-            builder.HasOne<Role>(u => u.Role).WithMany(r => r.Users).HasForeignKey(u => u.RoleId);
+            // Primary key
+            builder.HasKey(u => u.Id);
 
-            builder.ToTable("Users");
+            // Indexes for "normalized" username and email, to allow efficient lookups
+            builder.HasIndex(u => u.NormalizedUserName).HasDatabaseName("UserNameIndex").IsUnique();
+            builder.HasIndex(u => u.NormalizedEmail).HasDatabaseName("EmailIndex");
 
-            builder.HasData(new User
+            // Maps to the AspNetUsers table
+            builder.ToTable("AspNetUsers");
+
+            // A concurrency token for use with the optimistic concurrency checking
+            builder.Property(u => u.ConcurrencyStamp).IsConcurrencyToken();
+
+            // Limit the size of columns to use efficient database types
+            builder.Property(u => u.UserName).HasMaxLength(50);
+            builder.Property(u => u.NormalizedUserName).HasMaxLength(50);
+            builder.Property(u => u.Email).HasMaxLength(100);
+            builder.Property(u => u.NormalizedEmail).HasMaxLength(100);
+
+            // The relationships between User and other entity types
+            // Note that these relationships are configured with no navigation properties
+
+            // Each User can have many UserClaims
+            builder.HasMany<UserClaim>().WithOne().HasForeignKey(uc => uc.UserId).IsRequired();
+
+            // Each User can have many UserLogins
+            builder.HasMany<UserLogin>().WithOne().HasForeignKey(ul => ul.UserId).IsRequired();
+
+            // Each User can have many UserTokens
+            builder.HasMany<UserToken>().WithOne().HasForeignKey(ut => ut.UserId).IsRequired();
+
+            // Each User can have many entries in the UserRole join table
+            builder.HasMany<UserRole>().WithOne().HasForeignKey(ur => ur.UserId).IsRequired();
+
+
+                                        // ADMIN USER CREATION
+            var adminUser = new User
             {
                 Id = 1,
-                RoleId = 1,
-                FirstName = "Serkan",
-                LastName = "Uludağ",
-                UserName = "serkanuludag",
-                Email = "serkanuludag@gmail.com",
-                IsActive = true,
-                IsDeleted = false,
-                CreatedByName = "InitialCreation",
-                CreatedDate = DateTime.Now,
-                ModifiedByName = "InitialCreation",
-                ModifiedDate = DateTime.Now,
-                Description = "First admin user",
-                Note = "Admin user",
-                PasswordHash = Encoding.ASCII.GetBytes("0192023a7bbd73250516f069df18b500"),     // convert byte array
-                Picture = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSX4wVGjMQ37PaO4PdUVEAliSLi8-c2gJ1zvQ&usqp=CAU"
+                UserName = "adminuser",
+                NormalizedUserName = "ADMINUSER",
+                Email = "adminuser@gmail.com",
+                NormalizedEmail = "ADMINUSER@GMAIL.COM",
+                PhoneNumber = "+905555555555",
+                Picture = "defaultUser.png",
+                EmailConfirmed = true,
+                PhoneNumberConfirmed = true,
+                SecurityStamp = Guid.NewGuid().ToString()
 
 
-            });
+            };
+            adminUser.PasswordHash = CreatePasswordHash(adminUser, "adminuser");
+
+
+                                        // EDITOR USER
+            var editorUser = new User
+            {
+                Id = 2,
+                UserName = "editoruser",
+                NormalizedUserName = "EDITORUSER",
+                Email = "editoruser@gmail.com",
+                NormalizedEmail = "EDITORUSER@GMAIL.COM",
+                PhoneNumber = "+905555555555",
+                Picture = "defaultUser.png",
+                EmailConfirmed = true,
+                PhoneNumberConfirmed = true,
+                SecurityStamp = Guid.NewGuid().ToString()
+
+
+            };
+            editorUser.PasswordHash = CreatePasswordHash(editorUser, "editoruser");
+
+            builder.HasData(adminUser, editorUser);         // database seed
+        }
+
+
+
+        private string CreatePasswordHash(User user, string password)
+        {
+            var passwordHasher = new PasswordHasher<User>();
+
+            return passwordHasher.HashPassword(user, password);
         }
     }
 }

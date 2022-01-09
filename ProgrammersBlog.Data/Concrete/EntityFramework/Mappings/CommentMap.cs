@@ -31,44 +31,44 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
 
             builder.ToTable("Comments");
 
-            builder.HasData(
-                new Comment
-                {
-                    Id = 1,
-                    ArticleId = 1,
-                    Text = "Nice post!!",
-                    IsActive = true,
-                    IsDeleted = false,
-                    CreatedByName = "InitialCreation",
-                    CreatedDate = DateTime.Now,
-                    ModifiedByName = "InitialCreation",
-                    ModifiedDate = DateTime.Now,
-                    Note = "C# post comment"
-                }, new Comment
-                {
-                    Id = 2,
-                    ArticleId = 2,
-                    Text = "Good post!!",
-                    IsActive = true,
-                    IsDeleted = false,
-                    CreatedByName = "InitialCreation",
-                    CreatedDate = DateTime.Now,
-                    ModifiedByName = "InitialCreation",
-                    ModifiedDate = DateTime.Now,
-                    Note = "C++ post comment"
-                }, new Comment 
-                {
-                    Id = 3,
-                    ArticleId = 3,
-                    Text = "Great",
-                    IsActive = true,
-                    IsDeleted = false,
-                    CreatedByName = "InitialCreation",
-                    CreatedDate = DateTime.Now,
-                    ModifiedByName = "InitialCreation",
-                    ModifiedDate = DateTime.Now,
-                    Note = "JavaScript post comment"
-                });
+            //builder.HasData(
+            //    new Comment
+            //    {
+            //        Id = 1,
+            //        ArticleId = 1,
+            //        Text = "Nice post!!",
+            //        IsActive = true,
+            //        IsDeleted = false,
+            //        CreatedByName = "InitialCreation",
+            //        CreatedDate = DateTime.Now,
+            //        ModifiedByName = "InitialCreation",
+            //        ModifiedDate = DateTime.Now,
+            //        Note = "C# post comment"
+            //    }, new Comment
+            //    {
+            //        Id = 2,
+            //        ArticleId = 2,
+            //        Text = "Good post!!",
+            //        IsActive = true,
+            //        IsDeleted = false,
+            //        CreatedByName = "InitialCreation",
+            //        CreatedDate = DateTime.Now,
+            //        ModifiedByName = "InitialCreation",
+            //        ModifiedDate = DateTime.Now,
+            //        Note = "C++ post comment"
+            //    }, new Comment 
+            //    {
+            //        Id = 3,
+            //        ArticleId = 3,
+            //        Text = "Great",
+            //        IsActive = true,
+            //        IsDeleted = false,
+            //        CreatedByName = "InitialCreation",
+            //        CreatedDate = DateTime.Now,
+            //        ModifiedByName = "InitialCreation",
+            //        ModifiedDate = DateTime.Now,
+            //        Note = "JavaScript post comment"
+            //    });
         }
     }
 }

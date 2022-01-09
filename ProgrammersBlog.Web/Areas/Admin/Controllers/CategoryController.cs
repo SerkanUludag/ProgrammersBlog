@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ProgrammersBlog.Core.Utilities.Extensions;
 using ProgrammersBlog.Core.Utilities.Results.ComplexTypes;
 using ProgrammersBlog.Entity.DTOs;
@@ -14,6 +15,7 @@ using System.Threading.Tasks;
 namespace ProgrammersBlog.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin,Editor")]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;

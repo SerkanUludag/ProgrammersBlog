@@ -1,4 +1,4 @@
-﻿using ProgrammersBlog.Core.Data.Abstract;
+﻿using ProgrammersBlog.Core.Entity.Abstract;
 using ProgrammersBlog.Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -6,9 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgrammersBlog.Data.Abstract
+namespace ProgrammersBlog.Entity.DTOs
 {
-    public interface IRoleRepository : IEntityRepository<Role>
+    public class UserDto : DtoGetBase
     {
+        public User User { get; set; }
     }
 }
