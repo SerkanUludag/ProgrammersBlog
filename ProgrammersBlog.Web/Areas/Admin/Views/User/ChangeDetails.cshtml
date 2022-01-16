@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="Picture"></label>
-                        <input asp-for="Picture" type="hidden" />
+                        <input name="Picture" value="@Model.Picture" type="hidden" />               @*I think there is a bug when using asp-for*@
                         <img class="my-image" src="~/img/@Model.Picture" alt="@Model.UserName" />
                     </div>
                     <div class="form-group">
