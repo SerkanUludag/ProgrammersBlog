@@ -12,7 +12,7 @@ namespace ProgrammersBlog.Core.Data.Concrete.EntityFramework
 {
     public class EfEntityRepositoryBase<TEntity> : IEntityRepository<TEntity> where TEntity : class, IEntity, new()
     {
-        private readonly DbContext _context;
+        protected readonly DbContext _context;
         private readonly DbSet<TEntity> _dbSet;
         public EfEntityRepositoryBase(DbContext context)
         {
@@ -30,9 +30,9 @@ namespace ProgrammersBlog.Core.Data.Concrete.EntityFramework
             return await _dbSet.AnyAsync(predicate);
         }
 
-        public async Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate)
+        public async Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate = null)
         {
-            return await _dbSet.CountAsync(predicate);
+            return  await (predicate == null ? _dbSet.CountAsync() : _dbSet.CountAsync(predicate));
         }
 
         public async Task DeleteAsync(TEntity entity)
@@ -64,10 +64,7 @@ namespace ProgrammersBlog.Core.Data.Concrete.EntityFramework
         {
             IQueryable<TEntity> query = _dbSet;
 
-            if (predicate != null)
-            {
-                query = query.Where(predicate);
-            }
+            query = query.Where(predicate);
 
             if (includeProperties.Any())
             {

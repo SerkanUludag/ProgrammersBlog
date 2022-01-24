@@ -4,6 +4,10 @@
     Layout = "_Layout";
     ViewBag.Title = "Users Index";
 }
+<ol class="breadcrumb mb-3 mt-2">
+    <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a></li>
+    <li class="breadcrumb-item active"><a asp-area="Admin" asp-controller="User" asp-action="Index">Users</a></li>
+</ol>
 @if (Model.Status == ResultStatus.Success)
 {
     <div id="modalPlaceHolder" aria-hidden="true"></div>
@@ -74,7 +78,7 @@
 @*RENDER VIA RENDERSECTION METHOD ON LAYOUT*@
 @section Scripts
 {
-    <script src="~/js/userIndex.js" type="application/ecmascript"></script>           @* ~ ref wwwroot *@
+    <script src="~/AdminLTE/js/userIndex.js" type="application/ecmascript"></script>           @* ~ ref wwwroot *@
 }
 
 

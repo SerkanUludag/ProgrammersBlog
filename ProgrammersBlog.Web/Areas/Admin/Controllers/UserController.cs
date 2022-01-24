@@ -10,6 +10,7 @@ using ProgrammersBlog.Core.Utilities.Results.ComplexTypes;
 using ProgrammersBlog.Entity.Concrete;
 using ProgrammersBlog.Entity.DTOs;
 using ProgrammersBlog.Web.Areas.Admin.Models;
+using ProgrammersBlog.Web.Helpers.Abstract;
 using System;
 using System.IO;
 using System.Text.Json;
@@ -23,14 +24,15 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly IWebHostEnvironment _env;
+        private readonly IImageHelper _imageHelper;
+        
         private readonly IMapper _mapper;
-        public UserController(UserManager<User> userManager, IWebHostEnvironment env, IMapper mapper, SignInManager<User> signInManager)
+        public UserController(UserManager<User> userManager, IMapper mapper, SignInManager<User> signInManager, IImageHelper imageHelper)
         {
             _userManager = userManager;
-            _env = env;
             _mapper = mapper;
             _signInManager = signInManager;
+            _imageHelper = imageHelper;
         }
 
         [Authorize(Roles = "Admin")]
@@ -120,7 +122,8 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                userAddDto.Picture = await ImageUpload(userAddDto.UserName, userAddDto.PictureFile);
+                var uploadedImageDtoResult = await _imageHelper.UploadUserImage(userAddDto.UserName, userAddDto.PictureFile);
+                userAddDto.Picture = uploadedImageDtoResult.Status == ResultStatus.Success ? uploadedImageDtoResult.Data.FullName : "userImages/defaultUser.png";
                 var user = _mapper.Map<User>(userAddDto);
                 var result = await _userManager.CreateAsync(user, userAddDto.Password);     // create user, password hash automatically
                 if (result.Succeeded)
@@ -222,8 +225,12 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
                 var oldUserPicture = oldUser.Picture;
                 if(userUpdateDto.PictureFile != null)
                 {
-                    userUpdateDto.Picture = await ImageUpload(userUpdateDto.UserName, userUpdateDto.PictureFile);
-                    isNewPictureUploaded = true;
+                    var uploadedImageDtoResult = await _imageHelper.UploadUserImage(userUpdateDto.UserName, userUpdateDto.PictureFile);
+                    userUpdateDto.Picture = uploadedImageDtoResult.Status == ResultStatus.Success ? uploadedImageDtoResult.Data.FullName : "userImages/defaultUser.png";
+                    if (oldUserPicture != "userImages/defaultUser.png")
+                    {
+                        isNewPictureUploaded = true;
+                    }
                 }
                 var updatedUser = _mapper.Map<UserUpdateDto, User>(userUpdateDto, oldUser);                         // transfer object with automapper
                 var result = await _userManager.UpdateAsync(updatedUser);
@@ -231,7 +238,7 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
                 {
                     if (isNewPictureUploaded)
                     {
-                        ImageDelete(oldUserPicture);
+                        _imageHelper.Delete(oldUserPicture);
                     }
 
                     var userUpdateViewModel = JsonSerializer.Serialize(new UserUpdateAjaxViewModel
@@ -294,8 +301,9 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
                 var oldUserPicture = oldUser.Picture;
                 if (userUpdateDto.PictureFile != null)
                 {
-                    userUpdateDto.Picture = await ImageUpload(userUpdateDto.UserName, userUpdateDto.PictureFile);
-                    if(oldUserPicture != "defaultUser.png")
+                    var uploadedImageDtoResult = await _imageHelper.UploadUserImage(userUpdateDto.UserName, userUpdateDto.PictureFile);
+                    userUpdateDto.Picture = uploadedImageDtoResult.Status == ResultStatus.Success ? uploadedImageDtoResult.Data.FullName : "userImages/defaultUser.png";
+                    if (oldUserPicture != "userImages/defaultUser.png")
                     {
                         isNewPictureUploaded = true; 
                     }
@@ -306,7 +314,7 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
                 {
                     if (isNewPictureUploaded)
                     {
-                        ImageDelete(oldUserPicture);
+                        _imageHelper.Delete(oldUserPicture);
                     }
 
                     TempData.Add("SuccessMessage", $"{updatedUser.UserName} has been updated.");                    // send message to next view via tempdata
@@ -354,6 +362,15 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
                         TempData.Add("SuccessMessage", $"Password has been changed.");
                         return View();
                     }
+                    else
+                    {
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError("", error.Description);
+                        }
+
+                        return View(userPasswordChangeDto);
+                    }
                 }
                 else
                 {
@@ -365,46 +382,6 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
             {
                 return View(userPasswordChangeDto);
             }
-            return View();
-        }
-
-
-
-        [Authorize(Roles = "Admin,Editor")]
-        public async Task<string> ImageUpload(string userName, IFormFile pictureFile)
-        {
-            // ~/img/user.Picture    save image name only other parameters dynamic
-
-            string wwwroot = _env.WebRootPath; // get wwwroot path
-            //string fileName2 = Path.GetFileNameWithoutExtension(pictureFile.FileName);          
-
-            string fileExtension = Path.GetExtension(pictureFile.FileName);
-            DateTime dateTime = DateTime.Now;
-            // SerkanUludag_587_5_38_12_3_10_2022.png
-            string fileName = $"{userName}_{dateTime.FullDateTimeStringWithUnderScore()}{fileExtension}";           // datetime extension
-            var path = Path.Combine($"{wwwroot}/img", fileName);
-            await using (var stream = new FileStream(path, FileMode.Create))            
-            {
-                await pictureFile.CopyToAsync(stream);
-            }
-            return fileName;
-        }
-
-        [Authorize(Roles = "Admin,Editor")]
-        public bool ImageDelete(string pictureName)
-        {
-            string wwwroot = _env.WebRootPath;
-            var fileToDelete = Path.Combine($"{wwwroot}/img", pictureName);
-            if (System.IO.File.Exists(fileToDelete))                            // check image exists on that file path
-            {
-                System.IO.File.Delete(fileToDelete);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            
         }
     }
 }

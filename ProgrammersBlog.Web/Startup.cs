@@ -1,11 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProgrammersBlog.Service.AutoMapper.Profiles;
 using ProgrammersBlog.Service.Extensions;
 using ProgrammersBlog.Web.AutoMapper.Profiles;
+using ProgrammersBlog.Web.Helpers.Abstract;
+using ProgrammersBlog.Web.Helpers.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +20,11 @@ namespace ProgrammersBlog.Web
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        public IConfiguration Configuration { get; }        // to get connection string from appsettings.json
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews().AddRazorRuntimeCompilation().AddJsonOptions(opt =>       // mvc app with razor runtime and with json serializer options
@@ -29,7 +35,8 @@ namespace ProgrammersBlog.Web
             });
             services.AddSession();  //  like global variable
             services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile));    // install automapper DI package
-            services.LoadMyServices();      // custom extension for our services. 
+            services.LoadMyServices(connectionString: Configuration.GetConnectionString("localDB"));      // custom extension for our services. 
+            services.AddScoped<IImageHelper, ImageHelper>();
             services.ConfigureApplicationCookie(options =>          // cookie after identity
             {
                 options.LoginPath = new PathString("/Admin/User/Login");
