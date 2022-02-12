@@ -32,9 +32,9 @@ namespace ProgrammersBlog.Web
                 // system.text.json not (external) newtonsoft.json library
                 opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());      // const ajaxModel = jQuery.parseJSON(data)  => if(ajaxModel.ResultStatus === 0)
                 opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;         // need for reference of nested json objects
-            });
+            }).AddNToastNotifyToastr();                                                         // NToastNotify library
             services.AddSession();  //  like global variable
-            services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile));    // install automapper DI package
+            services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile), typeof(ViewModelsProfile));    // install automapper DI package
             services.LoadMyServices(connectionString: Configuration.GetConnectionString("localDB"));      // custom extension for our services. 
             services.AddScoped<IImageHelper, ImageHelper>();
             services.ConfigureApplicationCookie(options =>          // cookie after identity
@@ -69,7 +69,7 @@ namespace ProgrammersBlog.Web
 
             app.UseAuthentication();        // kimlik doðrulama, routingden sonra gelmeli
             app.UseAuthorization();         // yetki
-
+            app.UseNToastNotify();          // NToastNotify library
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapAreaControllerRoute(       // for admin area

@@ -96,7 +96,7 @@ $(document).ready(function () {
                 const dataToSend = form.serialize();        /* convert form to categaryAddDto*/
                 $.post(actionUrl, dataToSend).done(function (data) {
                     const categoryAddAjaxModel = jQuery.parseJSON(data);
-                    const newFormBody = $('.modal-body', categoryAddAjaxModel.CategoryAddPartial);
+                    const newFormBody = $('.modal-body', categoryAddAjaxModel.CategoryAddPartial);          // search for .model-body restricted inside categoryAddAjaxModel.CategoryAddPartial
                     placeHolderDiv.find('.modal-body').replaceWith(newFormBody);
                     const isValid = newFormBody.find('[name="IsValid"]').val() === "True";          /* return true or false*/
                     if (isValid) {

@@ -8,6 +8,8 @@
     <meta name="author" content="" />
     <title>@ViewBag.Title - Admin Panel | Programmers Blog</title>      @*title*@
     @await Html.PartialAsync("_LayoutCssPartial");      @*partial view*@
+    @await RenderSectionAsync("Styles", false);         @*render styles section under view files to use css only needed places *@
+    <link href="~/AdminLTE/css/site.css" rel="stylesheet" />            @*should be at the end for our changes apply last*@
 </head>
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">

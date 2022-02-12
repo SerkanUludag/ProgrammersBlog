@@ -5,8 +5,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NToastNotify;
 using ProgrammersBlog.Core.Utilities.Extensions;
 using ProgrammersBlog.Core.Utilities.Results.ComplexTypes;
+using ProgrammersBlog.Entity.ComplexTypes;
 using ProgrammersBlog.Entity.Concrete;
 using ProgrammersBlog.Entity.DTOs;
 using ProgrammersBlog.Web.Areas.Admin.Models;
@@ -25,14 +27,16 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IImageHelper _imageHelper;
-        
+        private readonly IToastNotification _toastNotification;
+
         private readonly IMapper _mapper;
-        public UserController(UserManager<User> userManager, IMapper mapper, SignInManager<User> signInManager, IImageHelper imageHelper)
+        public UserController(UserManager<User> userManager, IMapper mapper, SignInManager<User> signInManager, IImageHelper imageHelper, IToastNotification toastNotification)
         {
             _userManager = userManager;
             _mapper = mapper;
             _signInManager = signInManager;
             _imageHelper = imageHelper;
+            _toastNotification = toastNotification;
         }
 
         [Authorize(Roles = "Admin")]
@@ -122,7 +126,7 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var uploadedImageDtoResult = await _imageHelper.UploadUserImage(userAddDto.UserName, userAddDto.PictureFile);
+                var uploadedImageDtoResult = await _imageHelper.Upload(userAddDto.UserName, userAddDto.PictureFile, PictureType.User);
                 userAddDto.Picture = uploadedImageDtoResult.Status == ResultStatus.Success ? uploadedImageDtoResult.Data.FullName : "userImages/defaultUser.png";
                 var user = _mapper.Map<User>(userAddDto);
                 var result = await _userManager.CreateAsync(user, userAddDto.Password);     // create user, password hash automatically
@@ -150,7 +154,7 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
                     var userAddAjaxErrorModel = JsonSerializer.Serialize(new UserAddAjaxViewModel
                     {
                         UserAddDto = userAddDto,
-                        UserAddPartial = await this.RenderViewToStringAsync("_UserAddPartial", userAddDto)
+                        UserAddPartial = await this.RenderViewToStringAsync("_UserAddPartial", userAddDto)      // like return View(model) function, extension method needed for model injection when sending page as string
                     });
 
                     return Json(userAddAjaxErrorModel);
@@ -225,7 +229,7 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
                 var oldUserPicture = oldUser.Picture;
                 if(userUpdateDto.PictureFile != null)
                 {
-                    var uploadedImageDtoResult = await _imageHelper.UploadUserImage(userUpdateDto.UserName, userUpdateDto.PictureFile);
+                    var uploadedImageDtoResult = await _imageHelper.Upload(userUpdateDto.UserName, userUpdateDto.PictureFile, PictureType.User);
                     userUpdateDto.Picture = uploadedImageDtoResult.Status == ResultStatus.Success ? uploadedImageDtoResult.Data.FullName : "userImages/defaultUser.png";
                     if (oldUserPicture != "userImages/defaultUser.png")
                     {
@@ -301,7 +305,7 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
                 var oldUserPicture = oldUser.Picture;
                 if (userUpdateDto.PictureFile != null)
                 {
-                    var uploadedImageDtoResult = await _imageHelper.UploadUserImage(userUpdateDto.UserName, userUpdateDto.PictureFile);
+                    var uploadedImageDtoResult = await _imageHelper.Upload(userUpdateDto.UserName, userUpdateDto.PictureFile, PictureType.User);
                     userUpdateDto.Picture = uploadedImageDtoResult.Status == ResultStatus.Success ? uploadedImageDtoResult.Data.FullName : "userImages/defaultUser.png";
                     if (oldUserPicture != "userImages/defaultUser.png")
                     {
@@ -317,7 +321,8 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
                         _imageHelper.Delete(oldUserPicture);
                     }
 
-                    TempData.Add("SuccessMessage", $"{updatedUser.UserName} has been updated.");                    // send message to next view via tempdata
+                    //TempData.Add("SuccessMessage", $"{updatedUser.UserName} has been updated.");                     send message to next view via tempdata
+                    _toastNotification.AddSuccessToastMessage($"Updated successfully.");
                     return View(userUpdateDto);
                 }
                 else
@@ -359,7 +364,8 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
                         await _userManager.UpdateSecurityStampAsync(user);          // update security stamp
                         await _signInManager.SignOutAsync();
                         await _signInManager.PasswordSignInAsync(user, userPasswordChangeDto.NewPassword, true, false);
-                        TempData.Add("SuccessMessage", $"Password has been changed.");
+                        //TempData.Add("SuccessMessage", $"Password has been changed.");
+                        _toastNotification.AddSuccessToastMessage($"Your password updated successfully.");
                         return View();
                     }
                     else
