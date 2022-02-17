@@ -1,4 +1,5 @@
-﻿/*THIS DOM NEEDED FOR FIX BUG*/
+﻿/// <reference path="categoryindex-html.js" />
+/*THIS DOM NEEDED FOR FIX BUG*/
 
 $(document).ready(function () {
     const dataTable = $('#articlesTable').DataTable({
@@ -14,9 +15,7 @@ $(document).ready(function () {
                 },
                 className: 'btn btn-success',
                 action: function (e, dt, node, config) {
-                    let url = window.location.href;                /* GET CURRENT URL*/
-                    url = url.replace("/Index", "");
-                    window.open(`${url}/Add`, "self");                      /*GO TO URL*/
+                    
                 }
             },
             {
@@ -65,7 +64,7 @@ $(document).ready(function () {
                                         `${convertToShortDate(newArticle.ModifiedDate)}`,
                                         newArticle.ModifiedByName,
                                                 `
-                                        <button class="btn btn-primary btn-sm btn-update" data-id="${newArticle.Id}"><span class="fas fa-edit"></span></button>
+                                        <a class="btn btn-primary btn-sm btn-update" href="/Admin/Article/Update?articleId=${newArticle.Id}"><span class="fas fa-edit"></span></a>
                                         <button class="btn btn-danger btn-sm btn-delete" data-id="${newArticle.Id}"><span class="fas fa-minus-circle"></span></button>
                                                 `
                                     ]).node();

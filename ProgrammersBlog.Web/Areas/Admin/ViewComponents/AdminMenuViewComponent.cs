@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using ProgrammersBlog.Entity.Concrete;
 using ProgrammersBlog.Web.Areas.Admin.Models;
+using System.Threading.Tasks;
 
 namespace ProgrammersBlog.Web.Areas.Admin.ViewComponents
 {
@@ -15,10 +16,14 @@ namespace ProgrammersBlog.Web.Areas.Admin.ViewComponents
             _userManager = userManager;
         }
 
-        public ViewViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            var user = _userManager.GetUserAsync(HttpContext.User).Result;          // get current user
-            var roles = _userManager.GetRolesAsync(user).Result;
+            var user = await _userManager.GetUserAsync(HttpContext.User);          // get current user
+            var roles = await _userManager.GetRolesAsync(user);
+            if (user == null)
+                return Content("User not found.");
+            if (roles == null)
+                return Content("Roles not found.");
             return View(new UserWithRolesViewModel
             {
                 User = user,

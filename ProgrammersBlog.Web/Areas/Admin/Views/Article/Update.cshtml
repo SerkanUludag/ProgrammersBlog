@@ -7,7 +7,7 @@
 <ol class="breadcrumb mb-3 mt-2">
     <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a></li>
     <li class="breadcrumb-item active"><a asp-area="Admin" asp-controller="Article" asp-action="Index">Articles</a></li>
-    <li class="breadcrumb-item active"><a asp-area="Admin" asp-controller="Article" asp-action="Update">Update</a></li>
+    <li class="breadcrumb-item active"><a asp-area="Admin" asp-controller="Article" asp-action="Update" asp-route-articleId="@Model.Id">Update</a></li>
 </ol>
 <form asp-controller="Article" asp-action="Update" method="post" enctype="multipart/form-data">
     @*for image => enctype*@

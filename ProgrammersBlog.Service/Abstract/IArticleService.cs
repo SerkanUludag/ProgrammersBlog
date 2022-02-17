@@ -17,10 +17,12 @@ namespace ProgrammersBlog.Service.Abstract
         Task<IDataResult<ArticleListDto>> GetAllNonDeletedAsync();
         Task<IDataResult<ArticleListDto>> GetAllNonDeletedAndActiveAsync();
         Task<IDataResult<ArticleListDto>> GetAllByCategoryAsync(int categoryId);
+        Task<IDataResult<ArticleListDto>> GetAllDeletedAsync();
         Task<IResult> AddAsync(ArticleAddDto articleAddDto, string createdByName, int userId);
         Task<IResult> UpdateAsync(ArticleUpdateDto articleUpdateDto, string modifiedByName);
         Task<IResult> DeleteAsync(int articleId, string modifiedByName);
         Task<IResult> HardDeleteAsync(int articleId);
+        Task<IResult> UndoDeleteAsync(int articleId, string modifiedByName);
         Task<IDataResult<int>> CountAsync();
         Task<IDataResult<int>> CountByNonDeletedAsync();
     }

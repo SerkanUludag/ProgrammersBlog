@@ -9,6 +9,7 @@ using ProgrammersBlog.Entity.DTOs;
 using ProgrammersBlog.Web.Helpers.Abstract;
 using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ProgrammersBlog.Web.Helpers.Concrete
@@ -44,6 +45,11 @@ namespace ProgrammersBlog.Web.Helpers.Concrete
 
             /* Resimin uzantısı fileExtension adlı değişkene atanır. */
             string fileExtension = Path.GetExtension(pictureFile.FileName);
+
+
+            Regex regex = new Regex("[*'\",._&#^@]");       
+            name = regex.Replace(name, string.Empty);       // delete character not white space
+
 
             DateTime dateTime = DateTime.Now;
             /*

@@ -36,6 +36,11 @@ namespace ProgrammersBlog.Service.Utilities
             {
                 return $"{categoryName} has been successfully deleted from database.";
             }
+
+            public static string UndoDelete(string categoryName)
+            {
+                return $"{categoryName} has been successfully restored.";
+            }
         }
 
         public static class Article
@@ -65,6 +70,49 @@ namespace ProgrammersBlog.Service.Utilities
             {
                 return $"{articleName} has been successfully deleted from database.";
             }
+
+            public static string UndoDelete(string articleName)
+            {
+                return $"{articleName} has been successfully restored.";
+            }
         }
+
+        public static class Comment
+        {
+            public static string NotFound(bool isPlural)
+            {
+                if (isPlural) return "Hiç bir yorum bulunamadı.";
+                return "Böyle bir yorum bulunamadı.";
+            }
+
+            public static string Approve(int commentId)
+            {
+                return $"{commentId} no'lu yorum başarıyla onaylanmıştır.";
+            }
+
+            public static string Add(string createdByName)
+            {
+                return $"Sayın {createdByName}, yorumunuz başarıyla eklenmiştir.";
+            }
+
+            public static string Update(string createdByName)
+            {
+                return $"{createdByName} tarafından eklenen yorum başarıyla güncellenmiştir.";
+            }
+            public static string Delete(string createdByName)
+            {
+                return $"{createdByName} tarafından eklenen yorum başarıyla silinmiştir.";
+            }
+            public static string HardDelete(string createdByName)
+            {
+                return $"{createdByName} tarafından eklenen yorum başarıyla veritabanından silinmiştir.";
+            }
+
+            public static string UndoDelete(string createdByName)
+            {
+                return $"{createdByName} user comment has been successfully restored.";
+            }
+        }
+
     }
 }

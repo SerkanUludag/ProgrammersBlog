@@ -27,20 +27,24 @@ namespace ProgrammersBlog.Web
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews().AddRazorRuntimeCompilation().AddJsonOptions(opt =>       // mvc app with razor runtime and with json serializer options
+            services.AddControllersWithViews(options =>
+            {
+                //options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(value => "Bu alan boþ geçilmemelidir.");    hata mesajý türkçeleþtirme
+            }).AddRazorRuntimeCompilation().AddJsonOptions(opt =>       // mvc app with razor runtime and with json serializer options
             {
                 // system.text.json not (external) newtonsoft.json library
                 opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());      // const ajaxModel = jQuery.parseJSON(data)  => if(ajaxModel.ResultStatus === 0)
                 opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;         // need for reference of nested json objects
             }).AddNToastNotifyToastr();                                                         // NToastNotify library
+
             services.AddSession();  //  like global variable
-            services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile), typeof(ViewModelsProfile));    // install automapper DI package
+            services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile), typeof(ViewModelsProfile), typeof(CommentProfile));    // install automapper DI package
             services.LoadMyServices(connectionString: Configuration.GetConnectionString("localDB"));      // custom extension for our services. 
             services.AddScoped<IImageHelper, ImageHelper>();
             services.ConfigureApplicationCookie(options =>          // cookie after identity
             {
-                options.LoginPath = new PathString("/Admin/User/Login");
-                options.LogoutPath = new PathString("/Admin/User/Logout");
+                options.LoginPath = new PathString("/Admin/Auth/Login");
+                options.LogoutPath = new PathString("/Admin/Auth/Logout");
                 options.Cookie = new CookieBuilder
                 {
                     Name = "ProgrammersBlog",
@@ -50,7 +54,7 @@ namespace ProgrammersBlog.Web
                 };
                 options.SlidingExpiration = true;
                 options.ExpireTimeSpan = System.TimeSpan.FromDays(7);       // cookie stays for 7 days
-                options.AccessDeniedPath = new PathString("/Admin/User/AccessDenied");
+                options.AccessDeniedPath = new PathString("/Admin/Auth/AccessDenied");
             });
         }
 
@@ -77,7 +81,7 @@ namespace ProgrammersBlog.Web
                         areaName: "Admin",
                         pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
                     );
-                endpoints.MapDefaultControllerRoute();  // we write this
+                endpoints.MapDefaultControllerRoute();  // 
             });
         }
     }

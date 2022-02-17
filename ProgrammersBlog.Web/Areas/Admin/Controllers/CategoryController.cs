@@ -19,7 +19,6 @@ using System.Threading.Tasks;
 namespace ProgrammersBlog.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin,Editor")]
     public class CategoryController : BaseController
     {
         private readonly ICategoryService _categoryService;
@@ -29,6 +28,7 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
             _categoryService = categoryService;
         }
 
+        [Authorize(Roles = "SuperAdmin,Category.Read")]
         public async Task<IActionResult> Index()
         {
             var result = await _categoryService.GetAllNonDeletedAsync();
@@ -36,12 +36,14 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
             return View(result.Data);
         }
 
+        [Authorize(Roles = "SuperAdmin,Category.Add")]
         [HttpGet]
         public IActionResult Add()
         {
             return PartialView("_CategoryAddPartial");
         }
 
+        [Authorize(Roles = "SuperAdmin,Category.Add")]
         [HttpPost]
         public async Task<IActionResult> Add(CategoryAddDto categoryAddDto)
         {
@@ -67,6 +69,7 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
 
         }
 
+        [Authorize(Roles = "SuperAdmin,Category.Update")]
         [HttpGet]
         public async Task<IActionResult> Update(int categoryId)
         {
@@ -82,6 +85,7 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
             }
         }
 
+        [Authorize(Roles = "SuperAdmin,Category.Update")]
         [HttpPost]
         public async Task<IActionResult> Update(CategoryUpdateDto categoryUpdateDto)
         {
@@ -108,7 +112,7 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
         }
 
 
-
+        [Authorize(Roles = "SuperAdmin,Category.Read")]
         public async Task<JsonResult> GetAllCategories()
         {
             var result = await _categoryService.GetAllNonDeletedAsync();
@@ -119,12 +123,54 @@ namespace ProgrammersBlog.Web.Areas.Admin.Controllers
             return Json(categories);
         }
 
+        [Authorize(Roles = "SuperAdmin,Category.Delete")]
         [HttpPost]
         public async Task<JsonResult> Delete(int categoryId)
         {
             var result = await _categoryService.DeleteAsync(categoryId, LoggedInUser.UserName);
 
             var deletedCategory = JsonSerializer.Serialize(result.Data);
+            return Json(deletedCategory);
+        }
+
+        [Authorize(Roles = "SuperAdmin,Category.Read")]
+        [HttpGet]
+        public async Task<IActionResult> DeletedCategories()
+        {
+            var result = await _categoryService.GetAllDeletedAsync();
+
+            return View(result.Data);
+        }
+
+        [Authorize(Roles = "SuperAdmin,Category.Read")]
+        [HttpGet]
+        public async Task<JsonResult> GetAllDeletedCategories()
+        {
+            var result = await _categoryService.GetAllDeletedAsync();
+            var categories = JsonSerializer.Serialize(result.Data, new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve
+            });
+            return Json(categories);
+        }
+
+        [Authorize(Roles = "SuperAdmin,Category.Update")]
+        [HttpPost]
+        public async Task<JsonResult> UndoDelete(int categoryId)
+        {
+            var result = await _categoryService.UndoDeleteAsync(categoryId, LoggedInUser.UserName);
+
+            var undoDeletedCategory = JsonSerializer.Serialize(result.Data);
+            return Json(undoDeletedCategory);
+        }
+
+        [Authorize(Roles = "SuperAdmin,Category.Delete")]
+        [HttpPost]
+        public async Task<JsonResult> HardDelete(int categoryId)
+        {
+            var result = await _categoryService.HardDeleteAsync(categoryId);
+
+            var deletedCategory = JsonSerializer.Serialize(result);
             return Json(deletedCategory);
         }
     }

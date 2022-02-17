@@ -1,12 +1,12 @@
-﻿@model ProgrammersBlog.Entity.DTOs.UserListDto
-@using ProgrammersBlog.Core.Utilities.Results.ComplexTypes
+﻿@using ProgrammersBlog.Core.Utilities.Results.ComplexTypes
+@model ProgrammersBlog.Entity.DTOs.UserListDto
 @{
     Layout = "_Layout";
-    ViewBag.Title = "Users Index";
+    ViewBag.Title = "Kullanıcılar";
 }
 <ol class="breadcrumb mb-3 mt-2">
     <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a></li>
-    <li class="breadcrumb-item active"><a asp-area="Admin" asp-controller="User" asp-action="Index">Users</a></li>
+    <li class="breadcrumb-item active"><a asp-area="Admin" asp-controller="User" asp-action="Index">Kullanıcılar</a></li>
 </ol>
 @if (Model.Status == ResultStatus.Success)
 {
@@ -14,32 +14,38 @@
     <div class="card mb-4 mt-2">
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>
-            Users
+            Kullanıcılar
         </div>
         <div class="card-body">
             <div class="spinner-border" role="status" style="display: none;">
-                <span class="sr-only">Loading...</span>
+                <span class="sr-only">Yükleniyor...</span>
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered" id="usersTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>User Name</th>
-                            <th>Email</th>
-                            <th>Phone Number</th>
-                            <th>Picture</th>
-                            <th>Operations</th>
+                            <th>Kullanıcı Adı</th>
+                            <th>E-Posta Adresi</th>
+                            <th>Adı</th>
+                            <th>Soyadı</th>
+                            <th>Telefon Numarası</th>
+                            <th>Hakkında</th>
+                            <th>Resim</th>
+                            <th>İşlemler</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>User Name</th>
-                            <th>Email</th>
-                            <th>Phone Number</th>
-                            <th>Picture</th>
-                            <th>Operations</th>
+                            <th>Kullanıcı Adı</th>
+                            <th>E-Posta Adresi</th>
+                            <th>Adı</th>
+                            <th>Soyadı</th>
+                            <th>Telefon Numarası</th>
+                            <th>Hakkında</th>
+                            <th>Resim</th>
+                            <th>İşlemler</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -49,9 +55,14 @@
                                 <td>@user.Id</td>
                                 <td>@user.UserName</td>
                                 <td>@user.Email</td>
+                                <td>@user.FirstName</td>
+                                <td>@user.LastName</td>
                                 <td>@user.PhoneNumber</td>
-                                <td><img src="~/img/@user.Picture" alt="@user.UserName" class="my-image-table"/></td>                  @*image show from wwwroot*@
+                                <td>@(user.About.Length>75 ? user.About.Substring(0,75):user.About)</td>
+                                <td><img src="~/img/@user.Picture" alt="@user.UserName" class="my-image-table" /></td>
                                 <td>
+                                    <button class="btn btn-info btn-sm btn-detail" data-id="@user.Id"><span class="fas fa-newspaper"></span></button>
+                                    <button class="btn btn-warning btn-sm btn-assign" data-id="@user.Id"><span class="fas fa-user-shield"></span></button>
                                     <button class="btn btn-primary btn-sm btn-update" data-id="@user.Id"><span class="fas fa-edit"></span></button>
                                     <button class="btn btn-danger btn-sm btn-delete" data-id="@user.Id"><span class="fas fa-minus-circle"></span></button>
                                 </td>
@@ -67,18 +78,10 @@
 {
     <div class="alert alert-danger mt-3">
         @Model.Message <br />
-        <a class="alert-link" asp-area="Admin" asp-controller="Home" asp-action="Index">Click</a> to return dashboard
+        Dashboard sayfasına geri dönmek için lütfen <a class="alert-link" asp-area="Admin" asp-controller="Home" asp-action="Index">tıklayınız.</a>
     </div>
-
 }
-
-
-
-
-@*RENDER VIA RENDERSECTION METHOD ON LAYOUT*@
 @section Scripts
 {
-    <script src="~/AdminLTE/js/userIndex.js" type="application/ecmascript"></script>           @* ~ ref wwwroot *@
+    <script src="~/AdminLTE/js/userIndex.js" type="application/ecmascript"></script>
 }
-
-

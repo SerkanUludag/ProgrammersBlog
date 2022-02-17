@@ -1,0 +1,86 @@
+﻿@model ProgrammersBlog.Entity.DTOs.CategoryListDto
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Deleted Categories";
+}
+<ol class="breadcrumb mb-3 mt-2">
+    <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a></li>
+    <li class="breadcrumb-item active"><a asp-area="Admin" asp-controller="Category" asp-action="DeletedCategories">Deleted Categories</a></li>
+</ol>
+<div id="modalPlaceHolder" aria-hidden="true"></div>
+<div class="card mb-4 mt-2">
+    <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        Deleted Categories
+    </div>
+    <div class="card-body">
+        <div class="spinner-border" role="status" style="display: none;">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="deletedCategoriesTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Is Active</th>
+                        <th>Is Deleted</th>
+                        <th>Note</th>
+                        <th>Created At</th>
+                        <th>Created By</th>
+                        <th>Last Modified At</th>
+                        <th>Last Modified By</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Is Active</th>
+                        <th>Is Deleted</th>
+                        <th>Note</th>
+                        <th>Created At</th>
+                        <th>Created By</th>
+                        <th>Last Modified At</th>
+                        <th>Last Modified By</th>
+                        <th>Operations</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <tr name="@category.Id">
+                            <td>@category.Id</td>
+                            <td>@category.Name</td>
+                            <td>@category.Description</td>
+                            <td>@category.IsActive</td>
+                            <td>@category.IsDeleted</td>
+                            <td>@category.Note</td>
+                            <td>@category.CreatedDate.ToShortDateString()</td>
+                            <td>@category.CreatedByName</td>
+                            <td>@category.ModifiedDate.ToShortDateString()</td>
+                            <td>@category.ModifiedByName</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm btn-undo" data-id="@category.Id"><span class="fas fa-undo"></span></button>
+                                <button class="btn btn-danger btn-sm btn-delete" data-id="@category.Id"><span class="fas fa-minus-circle"></span></button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@*RENDER VIA RENDERSECTION METHOD ON LAYOUT*@
+@section Scripts
+{
+    <script src="~/AdminLTE/js/deletedCategories.js" type="application/ecmascript"></script>           @* ~ ref wwwroot *@
+}
+
+

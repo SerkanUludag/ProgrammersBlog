@@ -21,6 +21,7 @@ namespace ProgrammersBlog.Service.Abstract
         Task<IDataResult<CategoryListDto>> GetAllAsync();        // IList allowed because out T
         Task<IDataResult<CategoryListDto>> GetAllNonDeletedAsync();
         Task<IDataResult<CategoryListDto>> GetAllNonDeletedAndActiveAsync();
+        Task<IDataResult<CategoryListDto>> GetAllDeletedAsync();
         /// <summary>
         /// Verilen CategoryAddDto ve CreatedByName parametrelerine ait bilgiler ile yeni bir kategori ekler
         /// </summary>
@@ -30,6 +31,7 @@ namespace ProgrammersBlog.Service.Abstract
         Task<IDataResult<CategoryDto>> AddAsync(CategoryAddDto categoryAddDto, string createdByName);
         Task<IDataResult<CategoryDto>> UpdateAsync(CategoryUpdateDto categoryUpdateDto, string modifiedByName);
         Task<IDataResult<CategoryDto>> DeleteAsync(int categoryId, string modifiedByName);
+        Task<IDataResult<CategoryDto>> UndoDeleteAsync(int categoryId, string modifiedByName);
         Task<IResult> HardDeleteAsync(int categoryId);
         Task<IDataResult<int>> CountAsync();
         Task<IDataResult<int>> CountByNonDeletedAsync();
