@@ -112,12 +112,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 0,
                             Content = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 397, DateTimeKind.Local).AddTicks(9612),
-                            Date = new DateTime(2022, 2, 14, 23, 59, 40, 397, DateTimeKind.Local).AddTicks(8548),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 498, DateTimeKind.Local).AddTicks(9720),
+                            Date = new DateTime(2022, 2, 18, 21, 17, 29, 498, DateTimeKind.Local).AddTicks(8032),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(199),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(636),
                             Note = "C# 9.0 ve .NET 5 Yenilikleri",
                             SeoAuthor = "Serkan Uludag",
                             SeoDescription = "C# 9.0 ve .NET 5 Yenilikleri",
@@ -134,12 +134,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 0,
                             Content = "Yinelenen bir sayfa içeriğinin okuyucunun dikkatini dağıttığı bilinen bir gerçektir. Lorem Ipsum kullanmanın amacı, sürekli 'buraya metin gelecek, buraya metin gelecek' yazmaya kıyasla daha dengeli bir harf dağılımı sağlayarak okunurluğu artırmasıdır. Şu anda birçok masaüstü yayıncılık paketi ve web sayfa düzenleyicisi, varsayılan mıgır metinler olarak Lorem Ipsum kullanmaktadır. Ayrıca arama motorlarında 'lorem ipsum' anahtar sözcükleri ile arama yapıldığında henüz tasarım aşamasında olan çok sayıda site listelenir. Yıllar içinde, bazen kazara, bazen bilinçli olarak (örneğin mizah katılarak), çeşitli sürümleri geliştirilmiştir.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1396),
-                            Date = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1394),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2641),
+                            Date = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2639),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1398),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2643),
                             Note = "C++ 11 ve 19 Yenilikleri",
                             SeoAuthor = "Serkan Uludağ",
                             SeoDescription = "C++ 11 ve 19 Yenilikleri",
@@ -156,12 +156,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 0,
                             Content = "Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz. Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar uzanan 2000 yıllık bir geçmişi vardır. Virginia'daki Hampden-Sydney College'dan Latince profesörü Richard McClintock, bir Lorem Ipsum pasajında geçen ve anlaşılması en güç sözcüklerden biri olan 'consectetur' sözcüğünün klasik edebiyattaki örneklerini incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero tarafından M.Ö. 45 tarihinde kaleme alınan \"de Finibus Bonorum et Malorum\" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 1.10.33 sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir tezdir ve Rönesans döneminde çok popüler olmuştur. Lorem Ipsum pasajının ilk satırı olan \"Lorem ipsum dolor sit amet\" 1.10.32 sayılı bölümdeki bir satırdan gelmektedir. 1500'lerden beri kullanılmakta olan standard Lorem Ipsum metinleri ilgilenenler için yeniden üretilmiştir. Çiçero tarafından yazılan 1.10.32 ve 1.10.33 bölümleri de 1914 H. Rackham çevirisinden alınan İngilizce sürümleri eşliğinde özgün biçiminden yeniden üretilmiştir.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1406),
-                            Date = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1404),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2653),
+                            Date = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2651),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1408),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2655),
                             Note = "JavaScript ES2019 ve ES2020 Yenilikleri",
                             SeoAuthor = "Serkan Uludağ",
                             SeoDescription = "JavaScript ES2019 ve ES2020 Yenilikleri",
@@ -178,12 +178,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 0,
                             Content = "É um facto estabelecido de que um leitor é distraído pelo conteúdo legível de uma página quando analisa a sua mancha gráfica. Logo, o uso de Lorem Ipsum leva a uma distribuição mais ou menos normal de letras, ao contrário do uso de 'Conteúdo aqui,conteúdo aqui'', tornando-o texto legível. Muitas ferramentas de publicação electrónica e editores de páginas web usam actualmente o Lorem Ipsum como o modelo de texto usado por omissão, e uma pesquisa por 'lorem ipsum' irá encontrar muitos websites ainda na sua infância. Várias versões têm evoluído ao longo dos anos, por vezes por acidente, por vezes propositadamente (como no caso do humor).",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1416),
-                            Date = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1415),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2661),
+                            Date = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2660),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1418),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2663),
                             Note = "Typescript 4.1 Yenilikleri",
                             SeoAuthor = "Serkan Uludağ",
                             SeoDescription = "Typescript 4.1, Typescript, TYPESCRIPT 2021",
@@ -200,12 +200,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 0,
                             Content = "Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz. Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar uzanan 2000 yıllık bir geçmişi vardır. Virginia'daki Hampden-Sydney College'dan Latince profesörü Richard McClintock, bir Lorem Ipsum pasajında geçen ve anlaşılması en güç sözcüklerden biri olan 'consectetur' sözcüğünün klasik edebiyattaki örneklerini incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero tarafından M.Ö. 45 tarihinde kaleme alınan \"de Finibus Bonorum et Malorum\" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 1.10.33 sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir tezdir ve Rönesans döneminde çok popüler olmuştur. Lorem Ipsum pasajının ilk satırı olan \"Lorem ipsum dolor sit amet\" 1.10.32 sayılı bölümdeki bir satırdan gelmektedir. 1500'lerden beri kullanılmakta olan standard Lorem Ipsum metinleri ilgilenenler için yeniden üretilmiştir. Çiçero tarafından yazılan 1.10.32 ve 1.10.33 bölümleri de 1914 H. Rackham çevirisinden alınan İngilizce sürümleri eşliğinde özgün biçiminden yeniden üretilmiştir.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1425),
-                            Date = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1423),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2672),
+                            Date = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2670),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1427),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2674),
                             Note = "JAVA",
                             SeoAuthor = "Serkan Uludağ",
                             SeoDescription = "Java, Android, Mobile, Kotlin, Uygulama Geliştirme",
@@ -222,12 +222,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 0,
                             Content = "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1434),
-                            Date = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1432),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2681),
+                            Date = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2679),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1436),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2683),
                             Note = "Python",
                             SeoAuthor = "Serkan Uludağ",
                             SeoDescription = "Python ile Veri Madenciliği",
@@ -244,12 +244,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 0,
                             Content = "Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du 0De Finibus Bonorum et Malorum' (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, 'Lorem ipsum dolor sit amet...'', proviennent de la section 1.10.32",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1444),
-                            Date = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1442),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2691),
+                            Date = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2688),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1446),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2692),
                             Note = "PHP",
                             SeoAuthor = "Serkan Uludağ",
                             SeoDescription = "Php ile API Oluşturma Rehberi",
@@ -266,12 +266,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 0,
                             Content = "Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d'entre elles a été altérée par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard. Si vous voulez utiliser un passage du Lorem Ipsum, vous devez être sûr qu'il n'y a rien d'embarrassant caché dans le texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de 200 mots latins, en combinaison de plusieurs structures de phrases, pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d'humour.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1454),
-                            Date = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1451),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2701),
+                            Date = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2698),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1455),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2702),
                             Note = "Kotlin",
                             SeoAuthor = "Serkan Uludağ",
                             SeoDescription = "Kotlin ile Mobil Programlama Baştan Sona Adım Adım",
@@ -288,12 +288,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 0,
                             Content = "Al contrario di quanto si pensi, Lorem Ipsum non è semplicemente una sequenza casuale di caratteri. Risale ad un classico della letteratura latina del 45 AC, cosa che lo rende vecchio di 2000 anni. Richard McClintock, professore di latino al Hampden-Sydney College in Virginia, ha ricercato una delle più oscure parole latine, consectetur, da un passaggio del Lorem Ipsum e ha scoperto tra i vari testi in cui è citata, la fonte da cui è tratto il testo, le sezioni 1.10.32 and 1.10.33 del 'de Finibus Bonorum et Malorum' di Cicerone. Questo testo è un trattato su teorie di etica, molto popolare nel Rinascimento. La prima riga del Lorem Ipsum, 'Lorem ipsum dolor sit amet..'', è tratta da un passaggio della sezione 1.10.32.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1462),
-                            Date = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1460),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2710),
+                            Date = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2708),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1463),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2712),
                             Note = "Swift",
                             SeoAuthor = "Serkan Uludağ",
                             SeoDescription = "Swift ile IOS Mobil Programlama Baştan Sona Adım Adım",
@@ -310,12 +310,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 0,
                             Content = "Esistono innumerevoli variazioni dei passaggi del Lorem Ipsum, ma la maggior parte hanno subito delle variazioni del tempo, a causa dell’inserimento di passaggi ironici, o di sequenze casuali di caratteri palesemente poco verosimili. Se si decide di utilizzare un passaggio del Lorem Ipsum, è bene essere certi che non contenga nulla di imbarazzante. In genere, i generatori di testo segnaposto disponibili su internet tendono a ripetere paragrafi predefiniti, rendendo questo il primo vero generatore automatico su intenet. Infatti utilizza un dizionario di oltre 200 vocaboli latini, combinati con un insieme di modelli di strutture di periodi, per generare passaggi di testo verosimili. Il testo così generato è sempre privo di ripetizioni, parole imbarazzanti o fuori luogo ecc.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1474),
-                            Date = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1471),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2719),
+                            Date = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2717),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 398, DateTimeKind.Local).AddTicks(1475),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 499, DateTimeKind.Local).AddTicks(2721),
                             Note = "Ruby",
                             SeoAuthor = "Serkan Uludağ",
                             SeoDescription = "Ruby, Ruby on Rails Web Programlama, AirBnb Klon",
@@ -378,12 +378,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1152),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8863),
                             Description = "C# Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1162),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8873),
                             Name = "C#",
                             Note = "C# Blog Kategorisi"
                         },
@@ -391,12 +391,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 2,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1176),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8893),
                             Description = "C++ Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1177),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8894),
                             Name = "C++",
                             Note = "C++ Blog Kategorisi"
                         },
@@ -404,12 +404,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 3,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1181),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8900),
                             Description = "JavaScript Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1182),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8901),
                             Name = "JavaScript",
                             Note = "JavaScript Blog Kategorisi"
                         },
@@ -417,12 +417,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 4,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1186),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8906),
                             Description = "Typescript Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1187),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8908),
                             Name = "Typescript",
                             Note = "Typescript Blog Kategorisi"
                         },
@@ -430,12 +430,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 5,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1191),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8913),
                             Description = "Java Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1192),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8915),
                             Name = "Java",
                             Note = "Java Blog Kategorisi"
                         },
@@ -443,12 +443,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 6,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1196),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8919),
                             Description = "Python Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1197),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8921),
                             Name = "Python",
                             Note = "Python Blog Kategorisi"
                         },
@@ -456,12 +456,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 7,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1200),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8925),
                             Description = "Php Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1202),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8926),
                             Name = "Php",
                             Note = "Php Blog Kategorisi"
                         },
@@ -469,12 +469,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 8,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1205),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8930),
                             Description = "Kotlin Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1206),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8931),
                             Name = "Kotlin",
                             Note = "Kotlin Blog Kategorisi"
                         },
@@ -482,12 +482,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 9,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1210),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8935),
                             Description = "Swift Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1211),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8936),
                             Name = "Swift",
                             Note = "Swift Blog Kategorisi"
                         },
@@ -495,12 +495,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 10,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1215),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8940),
                             Description = "Ruby Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 404, DateTimeKind.Local).AddTicks(1216),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 507, DateTimeKind.Local).AddTicks(8941),
                             Name = "Ruby",
                             Note = "Ruby Blog Kategorisi"
                         });
@@ -559,11 +559,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 1,
                             ArticleId = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(414),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2694),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(424),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2710),
                             Note = "C# Makale Yorumu",
                             Text = "Lorem Ipsum pasajlarının birçok çeşitlemesi vardır. Ancak bunların büyük bir çoğunluğu mizah katılarak veya rastgele sözcükler eklenerek değiştirilmişlerdir. Eğer bir Lorem Ipsum pasajı kullanacaksanız, metin aralarına utandırıcı sözcükler gizlenmediğinden emin olmanız gerekir. İnternet'teki tüm Lorem Ipsum üreteçleri önceden belirlenmiş metin bloklarını yineler. Bu da, bu üreteci İnternet üzerindeki gerçek Lorem Ipsum üreteci yapar. Bu üreteç, 200'den fazla Latince sözcük ve onlara ait cümle yapılarını içeren bir sözlük kullanır. Bu nedenle, üretilen Lorem Ipsum metinleri yinelemelerden, mizahtan ve karakteristik olmayan sözcüklerden uzaktır."
                         },
@@ -572,11 +572,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 2,
                             ArticleId = 2,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(441),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2735),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(442),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2736),
                             Note = "C++ Makale Yorumu",
                             Text = "Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker"
                         },
@@ -585,11 +585,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 3,
                             ArticleId = 3,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(446),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2742),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(447),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2743),
                             Note = "JavaScript Makale Yorumu",
                             Text = "Ang Lorem Ipsum ay ginagamit na modelo ng industriya ng pagpriprint at pagtytypeset. Ang Lorem Ipsum ang naging regular na modelo simula pa noong 1500s, noong may isang di kilalang manlilimbag and kumuha ng galley ng type at ginulo ang pagkaka-ayos nito upang makagawa ng libro ng mga type specimen. Nalagpasan nito hindi lang limang siglo, kundi nalagpasan din nito ang paglaganap ng electronic typesetting at nanatiling parehas. Sumikat ito noong 1960s kasabay ng pag labas ng Letraset sheets na mayroong mga talata ng Lorem Ipsum, at kamakailan lang sa mga desktop publishing software tulad ng Aldus Pagemaker ginamit ang mga bersyon ng Lorem Ipsum."
                         },
@@ -598,11 +598,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 4,
                             ArticleId = 4,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(451),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2748),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(452),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2749),
                             Note = "Typescript Makale Yorumu",
                             Text = "Lorem Ipsum er rett og slett dummytekst fra og for trykkeindustrien. Lorem Ipsum har vært bransjens standard for dummytekst helt siden 1500-tallet, da en ukjent boktrykker stokket en mengde bokstaver for å lage et prøveeksemplar av en bok. Lorem Ipsum har tålt tidens tann usedvanlig godt, og har i tillegg til å bestå gjennom fem århundrer også tålt spranget over til elektronisk typografi uten vesentlige endringer. Lorem Ipsum ble gjort allment kjent i 1960-årene ved lanseringen av Letraset-ark med avsnitt fra Lorem Ipsum, og senere med sideombrekkingsprogrammet Aldus PageMaker som tok i bruk nettopp Lorem Ipsum for dummytekst."
                         },
@@ -611,11 +611,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 5,
                             ArticleId = 5,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(456),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2754),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(459),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2755),
                             Note = "Java Makale Yorumu",
                             Text = "Lorem Ipsum este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective. Nu doar că a supravieţuit timp de cinci secole, dar şi a facut saltul în tipografia electronică practic neschimbată. A fost popularizată în anii '60 odată cu ieşirea colilor Letraset care conţineau pasaje Lorem Ipsum, iar mai recent, prin programele de publicare pentru calculator, ca Aldus PageMaker care includeau versiuni de Lorem Ipsum."
                         },
@@ -624,11 +624,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 6,
                             ArticleId = 6,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(464),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2760),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(465),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2762),
                             Note = "Python Makale Yorumu",
                             Text = "Lorem Ipsum je jednostavno probni tekst koji se koristi u tiskarskoj i slovoslagarskoj industriji. Lorem Ipsum postoji kao industrijski standard još od 16-og stoljeća, kada je nepoznati tiskar uzeo tiskarsku galiju slova i posložio ih da bi napravio knjigu s uzorkom tiska. Taj je tekst ne samo preživio pet stoljeća, već se i vinuo u svijet elektronskog slovoslagarstva, ostajući u suštini nepromijenjen. Postao je popularan tijekom 1960-ih s pojavom Letraset listova s odlomcima Lorem Ipsum-a, a u skorije vrijeme sa software-om za stolno izdavaštvo kao što je Aldus PageMaker koji također sadrži varijante Lorem Ipsum-a."
                         },
@@ -637,11 +637,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 7,
                             ArticleId = 7,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(469),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2766),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(471),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2768),
                             Note = "Php Makale Yorumu",
                             Text = "Lorem Ipsum – tas ir teksta salikums, kuru izmanto poligrāfijā un maketēšanas darbos. Lorem Ipsum ir kļuvis par vispārpieņemtu teksta aizvietotāju kopš 16. gadsimta sākuma. Tajā laikā kāds nezināms iespiedējs izveidoja teksta fragmentu, lai nodrukātu grāmatu ar burtu paraugiem. Tas ir ne tikai pārdzīvojis piecus gadsimtus, bet bez ievērojamām izmaiņām saglabājies arī mūsdienās, pārejot uz datorizētu teksta apstrādi. Tā popularizēšanai 60-tajos gados kalpoja Letraset burtu paraugu publicēšana ar Lorem Ipsum teksta fragmentiem un, nesenā pagātnē, tādas maketēšanas programmas kā Aldus PageMaker, kuras šablonu paraugos ir izmantots Lorem Ipsum teksts."
                         },
@@ -650,11 +650,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 8,
                             ArticleId = 8,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(475),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2773),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(476),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2774),
                             Note = "Kotlin Makale Yorumu",
                             Text = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
                         },
@@ -663,11 +663,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 9,
                             ArticleId = 9,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(480),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2780),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(481),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2781),
                             Note = "Swift Makale Yorumu",
                             Text = "هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص. إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة أو غير لائقة مخبأة في هذا النص. بينما تعمل جميع مولّدات نصوص لوريم إيبسوم على الإنترنت على إعادة تكرار مقاطع من نص لوريم إيبسوم نفسه عدة مرات بما تتطلبه الحاجة، يقوم مولّدنا هذا باستخدام كلمات من قاموس يحوي على أكثر من 200 كلمة لا تينية، مضاف إليها مجموعة من الجمل النموذجية، لتكوين نص لوريم إيبسوم ذو شكل منطقي قريب إلى النص الحقيقي. وبالتالي يكون النص الناتح خالي من التكرار، أو أي كلمات أو عبارات غير لائقة أو ما شابه. وهذا ما يجعله أول مولّد نص لوريم إيبسوم حقيقي على الإنترنت."
                         },
@@ -676,11 +676,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 10,
                             ArticleId = 10,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(485),
+                            CreatedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2787),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 14, 23, 59, 40, 402, DateTimeKind.Local).AddTicks(486),
+                            ModifiedDate = new DateTime(2022, 2, 18, 21, 17, 29, 505, DateTimeKind.Local).AddTicks(2788),
                             Note = "Ruby Makale Yorumu",
                             Text = "Lorem Ipsum，也称乱数假文或者哑元文本， 是印刷及排版领域所常用的虚拟文字。由于曾经一台匿名的打印机刻意打乱了一盒印刷字体从而造出一本字体样品书，Lorem Ipsum从西元15世纪起就被作为此领域的标准文本使用。它不仅延续了五个世纪，还通过了电子排版的挑战，其雏形却依然保存至今。在1960年代，”Leatraset”公司发布了印刷着Lorem Ipsum段落的纸张，从而广泛普及了它的使用。最近，计算机桌面出版软件”Aldus PageMaker”也通过同样的方式使Lorem Ipsum落入大众的视野。"
                         });
@@ -718,154 +718,154 @@ namespace ProgrammersBlog.Data.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "af2431d2-c4a2-4682-95b5-e79b174eddc5",
+                            ConcurrencyStamp = "e12307f5-aede-45e7-9fb1-0ca9d6973d96",
                             Name = "Category.Create",
                             NormalizedName = "CATEGORY.CREATE"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "a731fd1e-84d4-41ad-8690-b719f0248d8b",
+                            ConcurrencyStamp = "e0694ec8-22de-4948-80fe-7495f16667bf",
                             Name = "Category.Read",
                             NormalizedName = "CATEGORY.READ"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "35397f3d-99e6-49a9-a451-438e3fe29b92",
+                            ConcurrencyStamp = "491c941b-cffc-4675-acaa-fe65a88329eb",
                             Name = "Category.Update",
                             NormalizedName = "CATEGORY.UPDATE"
                         },
                         new
                         {
                             Id = 4,
-                            ConcurrencyStamp = "e14beeb9-ca6a-4794-9e39-3d316dd040b4",
+                            ConcurrencyStamp = "9ede6cd7-c2c0-4c53-9317-f7ecde2eafc5",
                             Name = "Category.Delete",
                             NormalizedName = "CATEGORY.DELETE"
                         },
                         new
                         {
                             Id = 5,
-                            ConcurrencyStamp = "5a69bffc-4109-4f4d-ad66-93907502c347",
+                            ConcurrencyStamp = "066b7e40-da9d-487c-96ae-cf73c54aadee",
                             Name = "Article.Create",
                             NormalizedName = "ARTICLE.CREATE"
                         },
                         new
                         {
                             Id = 6,
-                            ConcurrencyStamp = "5c425c17-5d54-461b-b1ed-fabfdf31dec9",
+                            ConcurrencyStamp = "75e6defc-cac0-4096-8bd7-f7ed2cb5957d",
                             Name = "Article.Read",
                             NormalizedName = "ARTICLE.READ"
                         },
                         new
                         {
                             Id = 7,
-                            ConcurrencyStamp = "83c99afe-624e-4798-8951-348a3f188d98",
+                            ConcurrencyStamp = "1caa96e9-2c22-4beb-8b3b-417ed7d50f03",
                             Name = "Article.Update",
                             NormalizedName = "ARTICLE.UPDATE"
                         },
                         new
                         {
                             Id = 8,
-                            ConcurrencyStamp = "f516873c-5b4b-4a52-8b4e-c37608451305",
+                            ConcurrencyStamp = "a0a721a9-63ce-49b7-a2e0-16c5129eb6dd",
                             Name = "Article.Delete",
                             NormalizedName = "ARTICLE.DELETE"
                         },
                         new
                         {
                             Id = 9,
-                            ConcurrencyStamp = "7ddb8c04-51d2-46bf-a69a-58336740e5be",
+                            ConcurrencyStamp = "a1272077-28c2-49ec-b9ac-b4393b253cb5",
                             Name = "User.Create",
                             NormalizedName = "USER.CREATE"
                         },
                         new
                         {
                             Id = 10,
-                            ConcurrencyStamp = "4c491ef6-a3cf-41f0-b761-7842d10d0c45",
+                            ConcurrencyStamp = "bdeb1427-5861-4d3e-aa6c-007c48050526",
                             Name = "User.Read",
                             NormalizedName = "USER.READ"
                         },
                         new
                         {
                             Id = 11,
-                            ConcurrencyStamp = "6081b553-5ed0-4f29-bcda-c2f9243410f9",
+                            ConcurrencyStamp = "e549eda3-df15-4163-9c82-b6cb28575a47",
                             Name = "User.Update",
                             NormalizedName = "USER.UPDATE"
                         },
                         new
                         {
                             Id = 12,
-                            ConcurrencyStamp = "7718e9d0-bf5a-497c-99b5-1616cb408fc7",
+                            ConcurrencyStamp = "4187cbf9-800f-4532-9965-f1eebce56d9c",
                             Name = "User.Delete",
                             NormalizedName = "USER.DELETE"
                         },
                         new
                         {
                             Id = 13,
-                            ConcurrencyStamp = "d26a1dba-8315-47f7-9769-e4b59d611f64",
+                            ConcurrencyStamp = "50e90411-94c6-46e2-878c-c568c68be21d",
                             Name = "Role.Create",
                             NormalizedName = "ROLE.CREATE"
                         },
                         new
                         {
                             Id = 14,
-                            ConcurrencyStamp = "627f75e2-3313-47b0-9de0-740d21df48fc",
+                            ConcurrencyStamp = "dd8bb8e0-4d5d-477e-bd97-78c74c52766d",
                             Name = "Role.Read",
                             NormalizedName = "ROLE.READ"
                         },
                         new
                         {
                             Id = 15,
-                            ConcurrencyStamp = "329d89ac-334e-44ac-8a90-f936f9bc899c",
+                            ConcurrencyStamp = "47336e06-6689-4fbf-bb9d-13d52a61967d",
                             Name = "Role.Update",
                             NormalizedName = "ROLE.UPDATE"
                         },
                         new
                         {
                             Id = 16,
-                            ConcurrencyStamp = "686c1627-8214-47c2-ae43-996a853ae5a0",
+                            ConcurrencyStamp = "6938100e-cdac-419d-a746-6d43c423ef86",
                             Name = "Role.Delete",
                             NormalizedName = "ROLE.DELETE"
                         },
                         new
                         {
                             Id = 17,
-                            ConcurrencyStamp = "e6bf55d8-0106-4490-894b-ff4e9447143c",
+                            ConcurrencyStamp = "bc16788a-e08d-474c-827a-2952fd75641f",
                             Name = "Comment.Create",
                             NormalizedName = "COMMENT.CREATE"
                         },
                         new
                         {
                             Id = 18,
-                            ConcurrencyStamp = "f538e47e-6273-46d4-a6eb-204f5ea338ff",
+                            ConcurrencyStamp = "f346034b-2bdc-4f97-836d-f4d829924e77",
                             Name = "Comment.Read",
                             NormalizedName = "COMMENT.READ"
                         },
                         new
                         {
                             Id = 19,
-                            ConcurrencyStamp = "50ff3e72-2006-4fbc-aefc-4f5ff4eb8e00",
+                            ConcurrencyStamp = "932f1f9f-472c-4f15-807e-af42bfcce0ef",
                             Name = "Comment.Update",
                             NormalizedName = "COMMENT.UPDATE"
                         },
                         new
                         {
                             Id = 20,
-                            ConcurrencyStamp = "71305029-a60d-4fb7-9608-31bcdde2abc7",
+                            ConcurrencyStamp = "4eb302f0-da48-4a78-8cca-2475b70ab0f7",
                             Name = "Comment.Delete",
                             NormalizedName = "COMMENT.DELETE"
                         },
                         new
                         {
                             Id = 21,
-                            ConcurrencyStamp = "498bebb7-fd6b-4daa-8f1e-5d693b7be725",
+                            ConcurrencyStamp = "7f16ff13-eeee-448c-9a3b-957ba487c215",
                             Name = "AdminArea.Home.Read",
                             NormalizedName = "ADMINAREA.HOME.READ"
                         },
                         new
                         {
                             Id = 22,
-                            ConcurrencyStamp = "9ba84257-1649-4330-8d14-fae50244d3f0",
+                            ConcurrencyStamp = "15b5834e-9c59-47dc-9a6b-ee5e26c608ff",
                             Name = "SuperAdmin",
                             NormalizedName = "SUPERADMIN"
                         });
@@ -1011,7 +1011,7 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 1,
                             About = "Admin User of ProgrammersBlog",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4011f20a-75a6-41a8-abf5-7837cf4082c4",
+                            ConcurrencyStamp = "ea5369b9-9d72-4109-8ae8-7bd234dd81d0",
                             Email = "adminuser@gmail.com",
                             EmailConfirmed = true,
                             FacebookLink = "https://facebook.com/adminuser",
@@ -1023,11 +1023,11 @@ namespace ProgrammersBlog.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMINUSER@GMAIL.COM",
                             NormalizedUserName = "ADMINUSER",
-                            PasswordHash = "AQAAAAEAACcQAAAAED1w3ltJTBJwku4pPEulKcYccsY1fBJseD8sCt6OKo53UiiH0tySvMHQNdjueRc82Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAYvlUGJ6CwNwqeJ9M0PunrwQFCIugn642hUSm3CPWBFpFM/KeCnTHKVKBt1VIkOhg==",
                             PhoneNumber = "+905555555555",
                             PhoneNumberConfirmed = true,
                             Picture = "/userImages/defaultUser.png",
-                            SecurityStamp = "971bcd16-f415-4a12-8dd2-0b69593d078e",
+                            SecurityStamp = "8949e00c-8f81-48c5-a1c8-213695241226",
                             TwitterLink = "https://twitter.com/adminuser",
                             TwoFactorEnabled = false,
                             UserName = "adminuser",
@@ -1039,7 +1039,7 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 2,
                             About = "Editor User of ProgrammersBlog",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "06aefd2c-1402-482f-ba52-ef404059153d",
+                            ConcurrencyStamp = "686a0d8e-b236-4f41-a2d7-68d1d5e4f7fc",
                             Email = "editoruser@gmail.com",
                             EmailConfirmed = true,
                             FacebookLink = "https://facebook.com/editoruser",
@@ -1051,11 +1051,11 @@ namespace ProgrammersBlog.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "EDITORUSER@GMAIL.COM",
                             NormalizedUserName = "EDITORUSER",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHzSNgWvptKELQ2m6cumPrm0rtExuWxzGKVJfigdbt8DS3aBT+219dLM2G20oVwMRw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHl6QyZlRnyXahjLmi/OWnam8qjUk7h/s9X0sYVreHN60BiBdrgV4tK7tKddwBUMxg==",
                             PhoneNumber = "+905555555555",
                             PhoneNumberConfirmed = true,
                             Picture = "/userImages/defaultUser.png",
-                            SecurityStamp = "c5bfd49a-d170-429d-8593-41d20571e83e",
+                            SecurityStamp = "7f2ddf03-e8e7-4568-9725-89fcc75d7d60",
                             TwitterLink = "https://twitter.com/editoruser",
                             TwoFactorEnabled = false,
                             UserName = "editoruser",

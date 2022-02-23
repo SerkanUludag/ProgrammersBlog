@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProgrammersBlog.Entity.Concrete;
 using ProgrammersBlog.Service.AutoMapper.Profiles;
 using ProgrammersBlog.Service.Extensions;
 using ProgrammersBlog.Web.AutoMapper.Profiles;
@@ -27,6 +28,8 @@ namespace ProgrammersBlog.Web
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<AboutUsPageInfo>(Configuration.GetSection("AboutUsPageInfo")); // map class with values on AboutUsPageInfo section from appsettings.json
+            services.Configure<WebsiteInfo>(Configuration.GetSection("WebsiteInfo")); // 
             services.AddControllersWithViews(options =>
             {
                 //options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(value => "Bu alan boþ geçilmemelidir.");    hata mesajý türkçeleþtirme

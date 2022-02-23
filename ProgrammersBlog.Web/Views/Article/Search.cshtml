@@ -1,0 +1,100 @@
+﻿@model ProgrammersBlog.Web.Models.ArticleSearchViewModel
+@using System.Text.RegularExpressions;
+@{
+    ViewBag.Title = "Search Result";
+    Layout = "_Layout";
+    Regex regex = new Regex("<[^>]*>");         // to clear HTML from article.Content
+}
+<div class="col-md-8">
+
+    <h1 class="my-4">
+        Search Result
+    </h1>
+    <form>
+        <div class="form-row">
+            <input type="hidden" id="keyword" value="@Model.Keyword" />
+            <input type="hidden" id="current-page" value="@Model.ArticleListDto.CurrentPage" />
+            <div class="form-group col-md-6">
+                <select class="form-control" id="select-page-size">
+                    <option value="5" selected="@(Model.ArticleListDto.PageSize == 5 ? "selected" : null))">5</option>
+                    <option value="10" selected="@(Model.ArticleListDto.PageSize == 10 ? "selected" : null)">10</option>
+                    <option value="20" selected="@(Model.ArticleListDto.PageSize == 20 ? "selected" : null)">20</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <select class="form-control" id="select-is-ascending">
+                    <option value="false" selected="@(Model.ArticleListDto.IsAscending == false ? "selected" : null))">Newest</option>
+                    <option value="true" selected="@(Model.ArticleListDto.IsAscending ? "selected" : null)">Oldest</option>
+                </select>
+            </div>
+        </div>
+    </form>
+
+    @foreach (var article in Model.ArticleListDto.Articles)
+    {
+        <!-- Blog Post -->
+        <div class="card mb-4">
+            <img class="card-img-top" src="~/img/@article.Thumbnail" alt="@article.Title">
+            <div class="card-body">
+                <h2 class="card-title">@article.Title</h2>
+                <p class="card-text">
+                    @{
+                        article.Content = regex.Replace(article.Content, "");
+                    }
+                    @(article.Content.Length > 250 ? article.Content.Substring(0, 250) : article.Content)
+                </p>
+                <a asp-controller="Article" asp-action="Detail" asp-route-articleId="@article.Id" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+                Posted on @article.Date by @article.User.UserName
+            </div>
+        </div>
+    }
+
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center mb-4">
+        @{
+            if (Model.ArticleListDto.ShowPrevious)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-route-currentPage="@(Model.ArticleListDto.CurrentPage-1)" asp-route-isAscending="@Model.ArticleListDto.IsAscending" asp-route-pageSize="@Model.ArticleListDto.PageSize" asp-route-keyword="@Model.Keyword">Previous</a>
+                </li>
+            }
+            for (int i = 1; i <= Model.ArticleListDto.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.ArticleListDto.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-route-currentPage="@i" asp-route-isAscending="@Model.ArticleListDto.IsAscending" asp-route-pageSize="@Model.ArticleListDto.PageSize" asp-route-keyword="@Model.Keyword">@i</a>
+                </li>
+            }
+            if (Model.ArticleListDto.ShowNext)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-route-currentPage="@(Model.ArticleListDto.CurrentPage+1)" asp-route-isAscending="@Model.ArticleListDto.IsAscending" asp-route-pageSize="@Model.ArticleListDto.PageSize" asp-route-keyword="@Model.Keyword">Next</a>
+                </li>
+            }
+        }
+    </ul>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            $(function () {
+                const selectPageSize = $('#select-page-size');
+                const selectIsAscending = $('#select-is-ascending');
+                const keyword = $('#keyword').val();
+                const currentPage = $('#current-page').val();
+                const keywordQuery = keyword !== null ? `&keyword=${keyword}` : null;
+
+                selectPageSize.on('change', function () {
+                    window.location = `/?pageSize=${selectPageSize.val()}&isAscending=${selectIsAscending.val()}${keywordQuery !== null ? keywordQuery : null}&currentPage=${currentPage}`
+                });
+                selectIsAscending.on('change', function () {
+                    window.location = `/?pageSize=${selectPageSize.val()}&isAscending=${selectIsAscending.val()}${keywordQuery !== null ? keywordQuery : null}&currentPage=${currentPage}`
+                });
+            });
+
+        });
+    </script>
+}

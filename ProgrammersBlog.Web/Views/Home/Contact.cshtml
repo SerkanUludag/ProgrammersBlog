@@ -1,0 +1,38 @@
+﻿@model ProgrammersBlog.Entity.DTOs.EmailSendDto
+@{
+    Layout = "_ContactLayout";
+    ViewBag.Title = "Contact";
+    ViewBag.Author = "ProgrammersBlog";
+    ViewBag.Description = "Contact us...";
+    ViewBag.Tags = "Contact, Contact Us, Contact With Us";
+}
+
+<div class="container contact-form">
+    <div class="contact-image">
+        <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
+    </div>
+    <form asp-controller="Home" asp-action="Contact" method="post">
+        <h3>Drop Us a Message</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="txtName" class="form-control" placeholder="Your Name" asp-for="Name" />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="txtEmail" class="form-control" placeholder="Your Email" asp-for="Email" />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="txtSubject" class="form-control" placeholder="Subject / Header" asp-for="Subject" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea name="txtMsg" class="form-control" placeholder="Your Message..." asp-for="Message" style="width: 100%; height: 150px;"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

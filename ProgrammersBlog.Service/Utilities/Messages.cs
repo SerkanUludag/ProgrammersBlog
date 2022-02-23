@@ -75,6 +75,11 @@ namespace ProgrammersBlog.Service.Utilities
             {
                 return $"{articleName} has been successfully restored.";
             }
+
+            public static string IncreaseViewCount(string articleName)
+            {
+                return $"{articleName} view count has been increased.";
+            }
         }
 
         public static class Comment

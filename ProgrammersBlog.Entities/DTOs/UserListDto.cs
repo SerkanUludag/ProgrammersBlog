@@ -11,5 +11,7 @@ namespace ProgrammersBlog.Entity.DTOs
     public class UserListDto : DtoGetBase
     {
         public IList<User> Users { get; set; }
+
+        
     }
 }

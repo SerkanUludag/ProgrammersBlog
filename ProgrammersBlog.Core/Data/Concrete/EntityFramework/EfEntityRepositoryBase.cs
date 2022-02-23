@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LinqKit;
+using Microsoft.EntityFrameworkCore;
 using ProgrammersBlog.Core.Data.Abstract;
 using ProgrammersBlog.Core.Entity.Abstract;
 using System;
@@ -75,6 +76,31 @@ namespace ProgrammersBlog.Core.Data.Concrete.EntityFramework
             }
 
             return await query.SingleOrDefaultAsync();
+        }
+
+        public async Task<IList<TEntity>> SearchAsync(IList<Expression<Func<TEntity, bool>>> predicates, params Expression<Func<TEntity, object>>[] includeProperties)
+        {
+            IQueryable<TEntity> query = _dbSet;
+            if (predicates.Any())
+            {
+                var predicateChain = PredicateBuilder.New<TEntity>();       // come from linqkit nuget package
+                foreach (var predicate in predicates)
+                {
+                    predicateChain.Or(predicate);
+                }
+
+                query = query.Where(predicateChain);
+            }
+
+            if (includeProperties.Any())
+            {
+                foreach (var includeProperty in includeProperties)
+                {
+                    query = query.Include(includeProperty);
+                }
+            }
+
+            return await query.ToListAsync();
         }
 
         public async Task<TEntity> UpdateAsync(TEntity entity)
