@@ -8,6 +8,7 @@ using ProgrammersBlog.Entity.Concrete;
 using ProgrammersBlog.Service.AutoMapper.Profiles;
 using ProgrammersBlog.Service.Extensions;
 using ProgrammersBlog.Web.AutoMapper.Profiles;
+using ProgrammersBlog.Web.Filters;
 using ProgrammersBlog.Web.Helpers.Abstract;
 using ProgrammersBlog.Web.Helpers.Concrete;
 using System;
@@ -33,6 +34,7 @@ namespace ProgrammersBlog.Web
             services.AddControllersWithViews(options =>
             {
                 //options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(value => "Bu alan boþ geçilmemelidir.");    hata mesajý türkçeleþtirme
+                options.Filters.Add<MvcExceptionFilter>();        // custom exception filter middleware 
             }).AddRazorRuntimeCompilation().AddJsonOptions(opt =>       // mvc app with razor runtime and with json serializer options
             {
                 // system.text.json not (external) newtonsoft.json library

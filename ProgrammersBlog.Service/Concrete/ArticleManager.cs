@@ -12,6 +12,7 @@ using ProgrammersBlog.Service.Abstract;
 using ProgrammersBlog.Service.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -79,6 +80,7 @@ namespace ProgrammersBlog.Service.Concrete
         public async Task<IDataResult<ArticleListDto>> GetAllNonDeletedAsync()
         {
             var articles = await UnitOfWork.Articles.GetAllAsync(x => !x.IsDeleted, x => x.Category, x => x.User);
+
             if (articles.Count > -1)
             {
                 return new DataResult<ArticleListDto>(ResultStatus.Success, new ArticleListDto
