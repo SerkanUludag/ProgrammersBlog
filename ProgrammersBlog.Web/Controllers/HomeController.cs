@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using NToastNotify;
 using ProgrammersBlog.Entity.Concrete;
 using ProgrammersBlog.Entity.DTOs;
 using ProgrammersBlog.Service.Abstract;
@@ -14,10 +15,14 @@ namespace ProgrammersBlog.Web.Controllers
     {
         private readonly IArticleService _articleService;
         private readonly AboutUsPageInfo _aboutUsPageInfo;
-        public HomeController(IArticleService articleService, IOptions<AboutUsPageInfo> aboutUsPageInfo)
+        private readonly IMailService _mailService;
+        private readonly IToastNotification _toastNotification;
+        public HomeController(IArticleService articleService, IOptions<AboutUsPageInfo> aboutUsPageInfo, IMailService mailService, IToastNotification toastNotification)
         {
             _articleService = articleService;
             _aboutUsPageInfo = aboutUsPageInfo.Value;       // get values from appsetting.json object via configured AboutUsPageInfo class at startup.cs
+            _mailService = mailService;
+            _toastNotification = toastNotification;
         }
 
         [HttpGet]
@@ -45,7 +50,17 @@ namespace ProgrammersBlog.Web.Controllers
         [HttpPost]
         public IActionResult Contact(EmailSendDto emailSendDto)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var result = _mailService.SendContactEmail(emailSendDto);       // no need to check result success status because if any error error page will return, configured MvcExceptionFilter
+                _toastNotification.AddSuccessToastMessage(result.Message, new ToastrOptions
+                {
+                    Title = "Successfull Operation!"
+                });
+                return View();
+            }
+            return View(emailSendDto);
+
         }
     }
 }

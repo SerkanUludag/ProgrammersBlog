@@ -41,10 +41,11 @@ namespace ProgrammersBlog.Service.Extensions
                 options.ValidationInterval = TimeSpan.FromMinutes(15);         // security stamp check interval
             });
 
-            serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
+            serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();         // create instance every request
             serviceCollection.AddScoped<ICategoryService, CategoryManager>();
             serviceCollection.AddScoped<IArticleService, ArticleManager>();
             serviceCollection.AddScoped<ICommentService, CommentManager>();
+            serviceCollection.AddSingleton<IMailService, MailManager>();        // create only one
 
             return serviceCollection;
         }

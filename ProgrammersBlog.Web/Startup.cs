@@ -29,8 +29,9 @@ namespace ProgrammersBlog.Web
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<AboutUsPageInfo>(Configuration.GetSection("AboutUsPageInfo")); // map class with values on AboutUsPageInfo section from appsettings.json
+            services.Configure<AboutUsPageInfo>(Configuration.GetSection("AboutUsPageInfo")); // map class with values on AboutUsPageInfo section from appsettings.json and give vith DI
             services.Configure<WebsiteInfo>(Configuration.GetSection("WebsiteInfo")); // 
+            services.Configure<SmtpSettings>(Configuration.GetSection("SmtpSettings"));         // email send with smtp server, get settings from appsetting.json
             services.AddControllersWithViews(options =>
             {
                 //options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(value => "Bu alan boþ geçilmemelidir.");    hata mesajý türkçeleþtirme
