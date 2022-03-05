@@ -18,13 +18,25 @@ namespace ProgrammersBlog.Web
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
+            Host.CreateDefaultBuilder(args).ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                // to make appsettings.json dynamic and change appsettings.json values on admin panel (reload on change)
+                config.Sources.Clear();
+                var env = hostingContext.HostingEnvironment;
+                config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
+                config.AddEnvironmentVariables();
+                if(args != null)
                 {
-                    webBuilder.UseStartup<Startup>();
-                }).ConfigureLogging(logging =>
-                {
-                    logging.ClearProviders();   // deactivate other loggers
-                }).UseNLog();                   // NLog use
+                    config.AddCommandLine(args);
+                }
+            })
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            }).ConfigureLogging(logging =>
+            {
+                logging.ClearProviders();   // deactivate other loggers
+            }).UseNLog();                   // NLog use
     }
 }

@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProgrammersBlog.Entities.Concrete;
 using ProgrammersBlog.Entity.Concrete;
 using ProgrammersBlog.Service.AutoMapper.Profiles;
 using ProgrammersBlog.Service.Extensions;
+using ProgrammersBlog.Shared.Utilities.Extensions;
 using ProgrammersBlog.Web.AutoMapper.Profiles;
 using ProgrammersBlog.Web.Filters;
 using ProgrammersBlog.Web.Helpers.Abstract;
@@ -32,6 +34,11 @@ namespace ProgrammersBlog.Web
             services.Configure<AboutUsPageInfo>(Configuration.GetSection("AboutUsPageInfo")); // map class with values on AboutUsPageInfo section from appsettings.json and give vith DI
             services.Configure<WebsiteInfo>(Configuration.GetSection("WebsiteInfo")); // 
             services.Configure<SmtpSettings>(Configuration.GetSection("SmtpSettings"));         // email send with smtp server, get settings from appsetting.json
+            services.Configure<ArticleRightSideBarWidgetOptions>(Configuration.GetSection("ArticleRightSideBarWidgetOptions"));
+            services.ConfigureWritable<WebsiteInfo>(Configuration.GetSection("WebsiteInfo")); // 
+            services.ConfigureWritable<SmtpSettings>(Configuration.GetSection("SmtpSettings"));
+            services.ConfigureWritable<AboutUsPageInfo>(Configuration.GetSection("AboutUsPageInfo"));
+            services.ConfigureWritable<ArticleRightSideBarWidgetOptions>(Configuration.GetSection("ArticleRightSideBarWidgetOptions"));
             services.AddControllersWithViews(options =>
             {
                 //options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(value => "Bu alan boþ geçilmemelidir.");    hata mesajý türkçeleþtirme

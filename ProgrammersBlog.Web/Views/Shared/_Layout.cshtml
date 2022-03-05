@@ -2,7 +2,7 @@
 @using ProgrammersBlog.Entity.Concrete
 @*DEPENDENCY INJECTION*@
 @*VALUES COME FROM appsetting.json*@
-@inject IOptions<WebsiteInfo> WebsiteInfo
+@inject IOptionsSnapshot<WebsiteInfo> WebsiteInfo
 @{
     var websiteInfo = WebsiteInfo.Value;
 }

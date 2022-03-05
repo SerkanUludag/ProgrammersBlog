@@ -4,6 +4,7 @@ using NToastNotify;
 using ProgrammersBlog.Entity.Concrete;
 using ProgrammersBlog.Entity.DTOs;
 using ProgrammersBlog.Service.Abstract;
+using ProgrammersBlog.Shared.Utilities.Helpers.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +18,17 @@ namespace ProgrammersBlog.Web.Controllers
         private readonly AboutUsPageInfo _aboutUsPageInfo;
         private readonly IMailService _mailService;
         private readonly IToastNotification _toastNotification;
-        public HomeController(IArticleService articleService, IOptions<AboutUsPageInfo> aboutUsPageInfo, IMailService mailService, IToastNotification toastNotification)
+        private readonly IWritableOptions<AboutUsPageInfo> _aboutUsPageInfoWriter;      // edit appsetting.json without need of restarting app
+
+
+        public HomeController(IArticleService articleService, IOptionsSnapshot<AboutUsPageInfo> aboutUsPageInfo, IMailService mailService, IToastNotification toastNotification,
+            IWritableOptions<AboutUsPageInfo> aboutUsPageInfoWriter)            // IOptionsSnapshot for getting value dynamicly from appsettings.json
         {
             _articleService = articleService;
             _aboutUsPageInfo = aboutUsPageInfo.Value;       // get values from appsetting.json object via configured AboutUsPageInfo class at startup.cs
             _mailService = mailService;
             _toastNotification = toastNotification;
+            _aboutUsPageInfoWriter = aboutUsPageInfoWriter;
         }
 
         [HttpGet]
@@ -38,6 +44,7 @@ namespace ProgrammersBlog.Web.Controllers
         [HttpGet]
         public IActionResult About()
         {
+
             return View(_aboutUsPageInfo);
         }
 
