@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +32,17 @@ namespace ProgrammersBlog.Web
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IImageHelper, ImageHelper>();
+            services.AddSingleton(provider => new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new UserProfile(provider.GetService<IImageHelper>()));       
+                cfg.AddProfile(new CategoryProfile());
+                cfg.AddProfile(new ViewModelsProfile());
+                cfg.AddProfile(new CommentProfile());
+                cfg.AddProfile(new ArticleProfile());
+            }).CreateMapper());
+            //services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile), typeof(ViewModelsProfile), typeof(CommentProfile));     install automapper DI package
+
             services.Configure<AboutUsPageInfo>(Configuration.GetSection("AboutUsPageInfo")); // map class with values on AboutUsPageInfo section from appsettings.json and give vith DI
             services.Configure<WebsiteInfo>(Configuration.GetSection("WebsiteInfo")); // 
             services.Configure<SmtpSettings>(Configuration.GetSection("SmtpSettings"));         // email send with smtp server, get settings from appsetting.json
@@ -51,9 +63,7 @@ namespace ProgrammersBlog.Web
             }).AddNToastNotifyToastr();                                                         // NToastNotify library
 
             services.AddSession();  //  like global variable
-            services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile), typeof(ViewModelsProfile), typeof(CommentProfile));    // install automapper DI package
             services.LoadMyServices(connectionString: Configuration.GetConnectionString("localDB"));      // custom extension for our services. 
-            services.AddScoped<IImageHelper, ImageHelper>();
             services.ConfigureApplicationCookie(options =>          // cookie after identity
             {
                 options.LoginPath = new PathString("/Admin/Auth/Login");
@@ -61,7 +71,7 @@ namespace ProgrammersBlog.Web
                 options.Cookie = new CookieBuilder
                 {
                     Name = "ProgrammersBlog",
-                    HttpOnly = true,                                        
+                    HttpOnly = true,
                     SameSite = SameSiteMode.Strict,
                     SecurePolicy = CookieSecurePolicy.SameAsRequest         // must be CookieSecurePolicy.always for security
                 };
@@ -94,6 +104,14 @@ namespace ProgrammersBlog.Web
                         areaName: "Admin",
                         pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
                     );
+
+                endpoints.MapControllerRoute(
+                        name: "article",
+                        pattern: "{title}/{articleId}",
+                        defaults: new { controller = "Article", action = "Detail"}
+
+                    );
+
                 endpoints.MapDefaultControllerRoute();  // 
             });
         }

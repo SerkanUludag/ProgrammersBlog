@@ -8,6 +8,14 @@ namespace ProgrammersBlog.Service.Utilities
 {
     public static class Messages
     {
+        public static class General
+        {
+            public static string ValidationError()
+            {
+                return $"One or more validation error occurred";
+            }
+        }
+
         // Messages.Category.NotFound
         public static class Category
         {
@@ -41,6 +49,11 @@ namespace ProgrammersBlog.Service.Utilities
             {
                 return $"{categoryName} has been successfully restored.";
             }
+
+            public static string NotFoundById(int categoryId)
+            {
+                return $"Category with id: {categoryId} not found.";
+            }
         }
 
         public static class Article
@@ -49,6 +62,11 @@ namespace ProgrammersBlog.Service.Utilities
             {
                 if (isPlural) return "No article found.";
                 return "Article not found.";
+            }
+
+            public static string NotFoundById(int articleId)
+            {
+                return $"Article with id: {articleId} not found.";
             }
 
             public static string Add(string articleName)
@@ -116,6 +134,45 @@ namespace ProgrammersBlog.Service.Utilities
             public static string UndoDelete(string createdByName)
             {
                 return $"{createdByName} user comment has been successfully restored.";
+            }
+        }
+
+        public static class User
+        {
+            //public static string NotFound(bool isPlural)
+            //{
+            //    if (isPlural) return "No category found.";
+            //    return "Category not found.";
+            //}
+
+            //public static string Add(string categoryName)
+            //{
+            //    return $"{categoryName} has been successfully added.";
+            //}
+
+            //public static string Update(string categoryName)
+            //{
+            //    return $"{categoryName} has been successfully updated.";
+            //}
+
+            //public static string Delete(string categoryName)
+            //{
+            //    return $"{categoryName} has been successfully deleted.";
+            //}
+
+            //public static string HardDelete(string categoryName)
+            //{
+            //    return $"{categoryName} has been successfully deleted from database.";
+            //}
+
+            //public static string UndoDelete(string categoryName)
+            //{
+            //    return $"{categoryName} has been successfully restored.";
+            //}
+
+            public static string NotFoundById(int userId)
+            {
+                return $"User with id: {userId} not found.";
             }
         }
 

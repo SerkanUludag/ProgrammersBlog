@@ -4,6 +4,7 @@ using ProgrammersBlog.Core.Utilities.Results.ComplexTypes;
 using ProgrammersBlog.Entities.Concrete;
 using ProgrammersBlog.Entity.ComplexTypes;
 using ProgrammersBlog.Service.Abstract;
+using ProgrammersBlog.Web.Attributes;
 using ProgrammersBlog.Web.Models;
 using System;
 using System.Threading.Tasks;
@@ -36,6 +37,7 @@ namespace ProgrammersBlog.Web.Controllers
         }
 
         [HttpGet]
+        [ViewCountFilter]       // custom filter
         public async Task<IActionResult> Detail(int articleId)
         {
             var articleResult = await _articleService.GetAsync(articleId);
@@ -46,7 +48,7 @@ namespace ProgrammersBlog.Web.Controllers
                     _articleRightSideBarWidgetOptions.EndAt, _articleRightSideBarWidgetOptions.MinViewCount, _articleRightSideBarWidgetOptions.MaxViewCount, _articleRightSideBarWidgetOptions.MinCommentCount,
                     _articleRightSideBarWidgetOptions.MaxCommentCount);
 
-                await _articleService.IncreaseViewCountAsync(articleId);
+                //await _articleService.IncreaseViewCountAsync(articleId);      doing this with attribute
                 return View(new ArticleDetailViewModel
                 {
                     ArticleDto = articleResult.Data,

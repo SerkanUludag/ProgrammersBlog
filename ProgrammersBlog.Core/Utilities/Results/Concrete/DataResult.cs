@@ -1,4 +1,5 @@
-﻿using ProgrammersBlog.Core.Utilities.Results.Abstract;
+﻿using ProgrammersBlog.Core.Entity.Concrete;
+using ProgrammersBlog.Core.Utilities.Results.Abstract;
 using ProgrammersBlog.Core.Utilities.Results.ComplexTypes;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,24 @@ namespace ProgrammersBlog.Core.Utilities.Results.Concrete
             Status = resultStatus;
             Data = data;
         }
+        public DataResult(ResultStatus resultStatus, T data, IEnumerable<ValidationError> validationErrors)
+        {
+            Status = resultStatus;
+            Data = data;
+            ValidationErrors = validationErrors;
+        }
         public DataResult(ResultStatus resultStatus, string message, T data)
         {
             Status = resultStatus;
             Message = message;
             Data = data;
+        }
+        public DataResult(ResultStatus resultStatus, string message, T data, IEnumerable<ValidationError> validationErrors)
+        {
+            Status = resultStatus;
+            Message = message;
+            Data = data;
+            ValidationErrors = validationErrors;
         }
         public DataResult(ResultStatus resultStatus, string message, T data, Exception exception)
         {
@@ -28,6 +42,14 @@ namespace ProgrammersBlog.Core.Utilities.Results.Concrete
             Data = data;
             Exception = exception;
         }
+        public DataResult(ResultStatus resultStatus, string message, T data, Exception exception, IEnumerable<ValidationError> validationErrors)
+        {
+            Status = resultStatus;
+            Message = message;
+            Data = data;
+            Exception = exception;
+            ValidationErrors = validationErrors;
+        }
         public T Data { get; }
 
         public ResultStatus Status { get; }
@@ -35,5 +57,6 @@ namespace ProgrammersBlog.Core.Utilities.Results.Concrete
         public string Message { get; }
 
         public Exception Exception { get; }
+        public IEnumerable<ValidationError> ValidationErrors { get; set; }
     }
 }

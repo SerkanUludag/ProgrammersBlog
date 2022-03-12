@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using ProgrammersBlog.Core.Utilities.Results.Abstract;
 using ProgrammersBlog.Core.Utilities.Results.ComplexTypes;
 using ProgrammersBlog.Core.Utilities.Results.Concrete;
@@ -60,6 +61,9 @@ namespace ProgrammersBlog.Service.Concrete
 
         public async Task<IDataResult<CategoryDto>> GetAsync(int categoryId)
         {
+            //var query = UnitOfWork.Categories.GetAsQueryable();          
+            //query.Include(c => c.Articles).ThenInclude(a => a.Comments);
+
             var category = await UnitOfWork.Categories.GetAsync(x => x.Id == categoryId);
             if(category != null)
             {

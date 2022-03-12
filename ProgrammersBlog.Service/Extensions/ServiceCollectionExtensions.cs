@@ -20,6 +20,7 @@ namespace ProgrammersBlog.Service.Extensions
         public static IServiceCollection LoadMyServices(this IServiceCollection serviceCollection, string connectionString)
         {
             serviceCollection.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+                                                                              //      .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)       AsNoTracking() default
 
             serviceCollection.AddIdentity<User, Role>(options =>
             {

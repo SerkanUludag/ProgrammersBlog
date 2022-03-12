@@ -34,7 +34,10 @@
             showAnim: "drop",
             showOptions: {direction: "down"},
             //minDate: -3,
-            maxDate: 0          // means max today
+            maxDate: 0,          // means max today
+            onSelect: function (selectedDate) {
+                $("#endAtDatePicker").datepicker('option', 'minDate', selectedDate || getTodaysDate());    // set selected value to min value for end date
+            }
         
         });
 

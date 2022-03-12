@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProgrammersBlog.Core.Entity.Concrete
 {
-    public class MvcErrorModel                  // used at exception filter
+    public class ValidationError
     {
+        public string PropertyName { get; set; }
         public string Message { get; set; }
-        public string Detail { get; set; }
     }
 }
