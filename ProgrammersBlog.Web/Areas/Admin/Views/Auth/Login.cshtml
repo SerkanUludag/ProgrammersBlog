@@ -14,12 +14,12 @@
                         <div asp-validation-summary="All" class="text-danger"></div>
                         <div class="form-group">
                             <label class="small mb-1" asp-for="Email">Email</label>
-                            <input class="form-control py-4" asp-for="Email" type="email" placeholder="Enter email address" />
+                            <input class="form-control py-4" asp-for="Email" type="email" value="adminuser@gmail.com" />
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label class="small mb-1" asp-for="Password"></label>
-                            <input class="form-control py-4" asp-for="Password" type="password" placeholder="Enter password" />
+                            <input class="form-control py-4" asp-for="Password" type="password" value="adminuser" />
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -37,6 +37,7 @@
                 <div class="card-footer text-center">
                     <a class="btn btn-success btn-block text-white"><span class="fas fa-user-edit"></span> Sign up!</a>
                 </div>
+
             </div>
         </div>
     </div>
